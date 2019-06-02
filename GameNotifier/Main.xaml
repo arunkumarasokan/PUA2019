@@ -1,0 +1,365 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="522,2930" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <scg:List x:TypeArguments="x:String" Capacity="25">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>Newtonsoft.Json.Linq</x:String>
+      <x:String>Newtonsoft.Json</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
+    </scg:List>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="22">
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>PresentationCore</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.ValueTuple</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>UiPath.Mail</AssemblyReference>
+      <AssemblyReference>Newtonsoft.Json</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
+    </scg:List>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="482,2810" sap2010:WorkflowViewState.IdRef="Sequence_14">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <Sequence DisplayName="GetInfo" sap:VirtualizedContainerService.HintSize="460,2686" sap2010:WorkflowViewState.IdRef="Sequence_12">
+      <Sequence.Variables>
+        <Variable x:TypeArguments="x:String" Name="strWeatherCondition" />
+        <Variable x:TypeArguments="x:String" Default="http://api.openweathermap.org/data/2.5/forecast" Name="strWeatherAPIEndoint" />
+        <Variable x:TypeArguments="x:String" Name="strVenueZIP" />
+        <Variable x:TypeArguments="x:String" Default="e7afe69aaa871a9f254766e7c99d33ed" Name="strWeatherAPIKey" />
+        <Variable x:TypeArguments="x:String" Default="AIzaSyAz1zlM2sI7y-kb0HC5nnU-UzljsJLSgoM" Name="strGoogleAPIKey" />
+        <Variable x:TypeArguments="x:String" Name="strLocOrgin" />
+        <Variable x:TypeArguments="x:String" Name="strLocDestination" />
+        <Variable x:TypeArguments="x:String" Default="https://maps.googleapis.com/maps/api/directions/xml" Name="strGoogleMapEndpoint" />
+        <Variable x:TypeArguments="x:String" Name="strDistance" />
+        <Variable x:TypeArguments="x:String" Name="strDuration" />
+        <Variable x:TypeArguments="x:String" Default="LazzyLADS" Name="strTeamName" />
+        <Variable x:TypeArguments="x:String" Name="strTeam1" />
+        <Variable x:TypeArguments="x:String" Name="strTeam2" />
+        <Variable x:TypeArguments="x:String" Name="strVenue" />
+        <Variable x:TypeArguments="x:String" Name="strStartTime" />
+        <Variable x:TypeArguments="x:String" Name="strEndTime" />
+        <Variable x:TypeArguments="x:String" Name="strNextMatchDate" />
+        <Variable x:TypeArguments="x:String" Name="matchDate" />
+        <Variable x:TypeArguments="x:String" Name="strVenueAddress" />
+        <Variable x:TypeArguments="x:String" Name="strVenueGmapLink" />
+        <Variable x:TypeArguments="sd:DataTable" Name="dtPlayers" />
+        <Variable x:TypeArguments="x:String" Name="strPlayerName" />
+        <Variable x:TypeArguments="x:String" Name="strPlayerAddress" />
+        <Variable x:TypeArguments="x:Int32" Default="0" Name="strPlayerCount" />
+        <Variable x:TypeArguments="x:String" Name="strTripDetails">
+          <Variable.Default>
+            <Literal x:TypeArguments="x:String" Value="" />
+          </Variable.Default>
+        </Variable>
+        <Variable x:TypeArguments="s:String[]" Default="[new string(){}]" Name="straPlayerEmail" />
+        <Variable x:TypeArguments="x:Int32" Default="0" Name="iCount" />
+        <Variable x:TypeArguments="x:String" Name="strCalendarLocation" />
+        <Variable x:TypeArguments="x:String" Name="strCalendarEndDateTime" />
+        <Variable x:TypeArguments="x:String" Name="strCalendarStartDateTime" />
+        <Variable x:TypeArguments="x:String" Name="strCalendarTitle" />
+        <Variable x:TypeArguments="x:String" Name="strCalendarContent" />
+        <Variable x:TypeArguments="s:DateTime" Name="dtCalendarEndDateTime" />
+        <Variable x:TypeArguments="x:String" Default="396095208957-jotjvtodurgso9tmqv0ulb3ftk9llegh.apps.googleusercontent.com" Name="strGoogleClientID" />
+        <Variable x:TypeArguments="x:String" Default="QUgOr3m7VSY07iKYCcV4L2ea" Name="strGoogleClientSecret" />
+        <Variable x:TypeArguments="s:String[]" Default="[{&quot;aruncyclopse007@gmail.com&quot;,&quot;harini.arunkumar1990@gmail.com&quot;}]" Name="straTestEmails" />
+      </Sequence.Variables>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="438,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_3" UnSafe="False" WorkflowFileName="GetGameDetails.xaml">
+        <ui:InvokeWorkflowFile.Arguments>
+          <InArgument x:TypeArguments="x:String" x:Key="argTeamName">[strTeamName]</InArgument>
+          <OutArgument x:TypeArguments="x:String" x:Key="argTeam1">[strTeam1]</OutArgument>
+          <OutArgument x:TypeArguments="x:String" x:Key="argTeam2">[strTeam2]</OutArgument>
+          <OutArgument x:TypeArguments="x:String" x:Key="argVenue">[strVenue]</OutArgument>
+          <OutArgument x:TypeArguments="x:String" x:Key="argStartTime">[strStartTime]</OutArgument>
+          <OutArgument x:TypeArguments="x:String" x:Key="argEndTime">[strEndTime]</OutArgument>
+          <OutArgument x:TypeArguments="x:String" x:Key="argNextMatchDate">[strNextMatchDate]</OutArgument>
+        </ui:InvokeWorkflowFile.Arguments>
+      </ui:InvokeWorkflowFile>
+      <Assign sap:VirtualizedContainerService.HintSize="438,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:String">[matchDate]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:String">[strNextMatchDate]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <ui:Comment sap:VirtualizedContainerService.HintSize="438,112" sap2010:WorkflowViewState.IdRef="Comment_1" Text="// This is a reusable workflow to capture weather details based on zip. It takes 4 inputs and proves the weather condition between 6 A.M to 9 P.M as output" />
+      <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="438,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_4" UnSafe="False" WorkflowFileName="GetVenueDetails.xaml">
+        <ui:InvokeWorkflowFile.Arguments>
+          <InArgument x:TypeArguments="x:String" x:Key="argVenueName">[strVenue]</InArgument>
+          <OutArgument x:TypeArguments="x:String" x:Key="argVenueZip">[strVenueZIP]</OutArgument>
+          <OutArgument x:TypeArguments="x:String" x:Key="argVenueAddress">[strVenueAddress]</OutArgument>
+          <OutArgument x:TypeArguments="x:String" x:Key="argGmapLink">[strVenueGmapLink]</OutArgument>
+        </ui:InvokeWorkflowFile.Arguments>
+      </ui:InvokeWorkflowFile>
+      <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" Buttons="Ok" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="438,59" sap2010:WorkflowViewState.IdRef="MessageBox_30" Text="[strVenueZIP + matchDate]" TopMost="True" />
+      <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="438,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="WeatherAPI.xaml">
+        <ui:InvokeWorkflowFile.Arguments>
+          <InArgument x:TypeArguments="x:String" x:Key="argMatchDate">[matchDate]</InArgument>
+          <OutArgument x:TypeArguments="x:String" x:Key="argWeatherCondition">[strWeatherCondition]</OutArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="argWeatherAPIendpoint">[strWeatherAPIEndoint]</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="argVenueZIp">[strVenueZIP]</InArgument>
+          <InArgument x:TypeArguments="x:String" x:Key="argWeatherAPIKey">[strWeatherAPIKey]</InArgument>
+        </ui:InvokeWorkflowFile.Arguments>
+      </ui:InvokeWorkflowFile>
+      <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[dtPlayers]" DisplayName="Read Range" sap:VirtualizedContainerService.HintSize="438,87" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="Sheet1" WorkbookPath="[environment.CurrentDirectory+&quot;\Input\&quot;+strTeamName+&quot;\PlayerDetails.xlsx&quot;]" />
+      <Assign sap:VirtualizedContainerService.HintSize="438,60" sap2010:WorkflowViewState.IdRef="Assign_8">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:Int32">[strPlayerCount]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:Int32">[dtPlayers.Rows.Count]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <Assign sap:VirtualizedContainerService.HintSize="438,60" sap2010:WorkflowViewState.IdRef="Assign_12">
+        <Assign.To>
+          <OutArgument x:TypeArguments="s:String[]">[straPlayerEmail]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="s:String[]">[new string(strPlayerCount-1){}]</InArgument>
+        </Assign.Value>
+      </Assign>
+      <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[dtPlayers]" DisplayName="For Each Row" sap:VirtualizedContainerService.HintSize="438,51" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+        <ui:ForEachRow.Body>
+          <ActivityAction x:TypeArguments="sd:DataRow">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="336,911" sap2010:WorkflowViewState.IdRef="Sequence_17">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <Assign sap:VirtualizedContainerService.HintSize="314,60" sap2010:WorkflowViewState.IdRef="Assign_2">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:String">[strPlayerAddress]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:String">[row("Address").ToString]</InArgument>
+                </Assign.Value>
+              </Assign>
+              <Assign sap:VirtualizedContainerService.HintSize="314,60" sap2010:WorkflowViewState.IdRef="Assign_4">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:String">[straPlayerEmail(iCount)]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:String">[row("email").ToString]</InArgument>
+                </Assign.Value>
+              </Assign>
+              <Assign sap:VirtualizedContainerService.HintSize="314,60" sap2010:WorkflowViewState.IdRef="Assign_5">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:String">[strPlayerName]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:String">[row("Name").ToString]</InArgument>
+                </Assign.Value>
+              </Assign>
+              <Assign sap:VirtualizedContainerService.HintSize="314,60" sap2010:WorkflowViewState.IdRef="Assign_3">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:String">[strLocOrgin]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:String">[strPlayerAddress]</InArgument>
+                </Assign.Value>
+              </Assign>
+              <Assign sap:VirtualizedContainerService.HintSize="314,60" sap2010:WorkflowViewState.IdRef="Assign_10">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:String">[strLocDestination]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:String">[strVenueAddress]</InArgument>
+                </Assign.Value>
+              </Assign>
+              <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke TripMap workflow" sap:VirtualizedContainerService.HintSize="314,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_2" UnSafe="False" WorkflowFileName="TripMap.xaml">
+                <ui:InvokeWorkflowFile.Arguments>
+                  <InArgument x:TypeArguments="x:String" x:Key="argGoogleMapEndpoint">[strGoogleMapEndpoint]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="argGoogleApiKey">[strGoogleAPIKey]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="argOrgin">[strLocOrgin]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="argDestination">[strLocDestination]</InArgument>
+                  <OutArgument x:TypeArguments="x:String" x:Key="argDuration">[strDuration]</OutArgument>
+                  <OutArgument x:TypeArguments="x:String" x:Key="argDistance">[strDistance]</OutArgument>
+                </ui:InvokeWorkflowFile.Arguments>
+              </ui:InvokeWorkflowFile>
+              <Assign sap:VirtualizedContainerService.HintSize="314,60" sap2010:WorkflowViewState.IdRef="Assign_11">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:String">[strTripDetails]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:String">[strTripDetails +strPlayerName+" - Distance: " +strDistance + " Duration : "+ strDuration+ environment.NewLine]</InArgument>
+                </Assign.Value>
+              </Assign>
+              <Assign sap:VirtualizedContainerService.HintSize="314,60" sap2010:WorkflowViewState.IdRef="Assign_13">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:Int32">[iCount]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:Int32">[iCount +1]</InArgument>
+                </Assign.Value>
+              </Assign>
+            </Sequence>
+          </ActivityAction>
+        </ui:ForEachRow.Body>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:ForEachRow>
+      <Sequence DisplayName="Calendar Invite" sap:VirtualizedContainerService.HintSize="438,1412" sap2010:WorkflowViewState.IdRef="Sequence_19">
+        <Sequence.Variables>
+          <Variable x:TypeArguments="s:DateTime" Name="dtCalendarStartDateTime" />
+        </Sequence.Variables>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+        <Assign sap:VirtualizedContainerService.HintSize="416,60" sap2010:WorkflowViewState.IdRef="Assign_14">
+          <Assign.To>
+            <OutArgument x:TypeArguments="x:String">[strCalendarLocation]</OutArgument>
+          </Assign.To>
+          <Assign.Value>
+            <InArgument x:TypeArguments="x:String">[strVenueAddress]</InArgument>
+          </Assign.Value>
+        </Assign>
+        <Assign sap:VirtualizedContainerService.HintSize="416,60" sap2010:WorkflowViewState.IdRef="Assign_15">
+          <Assign.To>
+            <OutArgument x:TypeArguments="x:String">[strCalendarTitle]</OutArgument>
+          </Assign.To>
+          <Assign.Value>
+            <InArgument x:TypeArguments="x:String">["DCL: "+strTeam1 +" vs "+ strTeam2 + " On "+ matchDate + " between "+ strStartTime+ " - "+ strEndTime]</InArgument>
+          </Assign.Value>
+        </Assign>
+        <Assign sap:VirtualizedContainerService.HintSize="416,60" sap2010:WorkflowViewState.IdRef="Assign_16">
+          <Assign.To>
+            <OutArgument x:TypeArguments="x:String">[strCalendarStartDateTime]</OutArgument>
+          </Assign.To>
+          <Assign.Value>
+            <InArgument x:TypeArguments="x:String">[strNextMatchDate +" "+ strStartTime]</InArgument>
+          </Assign.Value>
+        </Assign>
+        <Assign sap:VirtualizedContainerService.HintSize="416,60" sap2010:WorkflowViewState.IdRef="Assign_18">
+          <Assign.To>
+            <OutArgument x:TypeArguments="x:String">[strCalendarStartDateTime]</OutArgument>
+          </Assign.To>
+          <Assign.Value>
+            <InArgument x:TypeArguments="x:String">[DateTime.ParseExact(strCalendarStartDateTime.ToString,"yyyy-MM-dd hh.mm tt",Nothing).ToString("MM/dd/yyyy HH:mm:ss")]</InArgument>
+          </Assign.Value>
+        </Assign>
+        <Assign sap:VirtualizedContainerService.HintSize="416,60" sap2010:WorkflowViewState.IdRef="Assign_19">
+          <Assign.To>
+            <OutArgument x:TypeArguments="s:DateTime">[dtCalendarStartDateTime]</OutArgument>
+          </Assign.To>
+          <Assign.Value>
+            <InArgument x:TypeArguments="s:DateTime">[convert.ToDateTime(strCalendarStartDateTime)]</InArgument>
+          </Assign.Value>
+        </Assign>
+        <Assign sap:VirtualizedContainerService.HintSize="416,60" sap2010:WorkflowViewState.IdRef="Assign_20">
+          <Assign.To>
+            <OutArgument x:TypeArguments="x:String">[strCalendarEndDateTime]</OutArgument>
+          </Assign.To>
+          <Assign.Value>
+            <InArgument x:TypeArguments="x:String">[strNextMatchDate +" "+ strEndTime]</InArgument>
+          </Assign.Value>
+        </Assign>
+        <Assign sap:VirtualizedContainerService.HintSize="416,60" sap2010:WorkflowViewState.IdRef="Assign_21">
+          <Assign.To>
+            <OutArgument x:TypeArguments="x:String">[strCalendarEndDateTime]</OutArgument>
+          </Assign.To>
+          <Assign.Value>
+            <InArgument x:TypeArguments="x:String">[DateTime.ParseExact(strCalendarEndDateTime.ToString,"yyyy-MM-dd hh.mm tt",Nothing).ToString("MM/dd/yyyy HH:mm:ss")]</InArgument>
+          </Assign.Value>
+        </Assign>
+        <Assign sap:VirtualizedContainerService.HintSize="416,60" sap2010:WorkflowViewState.IdRef="Assign_22">
+          <Assign.To>
+            <OutArgument x:TypeArguments="s:DateTime">[dtCalendarEndDateTime]</OutArgument>
+          </Assign.To>
+          <Assign.Value>
+            <InArgument x:TypeArguments="s:DateTime">[convert.ToDateTime(strCalendarEndDateTime)]</InArgument>
+          </Assign.Value>
+        </Assign>
+        <Assign sap:VirtualizedContainerService.HintSize="416,60" sap2010:WorkflowViewState.IdRef="Assign_23">
+          <Assign.To>
+            <OutArgument x:TypeArguments="x:String">[strCalendarContent]</OutArgument>
+          </Assign.To>
+          <Assign.Value>
+            <InArgument x:TypeArguments="x:String">["Game Details :"+environment.newline+strCalendarTitle + environment.NewLine +environment.newline+"Venue Details:" + environment.newline+"Venue Name: "+strVenue+ environment.newline+"Venue Address: "+strVenueAddress+ environment.newline+"Google Map Link: "+ strVenueGmapLink+ environment.newline+environment.newline+ "Weather Details: "+environment.newline+strWeatherCondition+environment.newline+environment.newline+"Trip Details: "+environment.newline+ strTripDetails+environment.newline+" Please Accept the Invite to confirm your availability!!"]</InArgument>
+          </Assign.Value>
+        </Assign>
+        <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" Buttons="Ok" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="416,59" sap2010:WorkflowViewState.IdRef="MessageBox_29" Text="[strCalendarContent]" TopMost="True" />
+        <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="416,289" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+          <ui:CommentOut.Body>
+            <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="336,211" sap2010:WorkflowViewState.IdRef="Sequence_20">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:InvokeWorkflowFile ContinueOnError="{x:Null}" DisplayName="Invoke Workflow File" sap:VirtualizedContainerService.HintSize="314,87" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_6" UnSafe="False" WorkflowFileName="GoogleCalendarInvite.xaml">
+                <ui:InvokeWorkflowFile.Arguments>
+                  <InArgument x:TypeArguments="s:String[]" x:Key="argAttendees">[straPlayerEmail]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="argEventTitle">[strCalendarTitle]</InArgument>
+                  <InArgument x:TypeArguments="s:DateTime" x:Key="argStartDateTime">[dtCalendarStartDateTime]</InArgument>
+                  <InArgument x:TypeArguments="s:DateTime" x:Key="argEndDateTime">[dtCalendarEndDateTime]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="argLocation">[strCalendarLocation]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="argEventDetails">[strCalendarContent]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="argGoogleAPIKey">[strGoogleAPIKey]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="argGoogleClientID">[strGoogleClientID]</InArgument>
+                  <InArgument x:TypeArguments="x:String" x:Key="argGoogleClientSecret">[strGoogleClientSecret]</InArgument>
+                </ui:InvokeWorkflowFile.Arguments>
+              </ui:InvokeWorkflowFile>
+            </Sequence>
+          </ui:CommentOut.Body>
+        </ui:CommentOut>
+      </Sequence>
+    </Sequence>
+  </Sequence>
+</Activity>
