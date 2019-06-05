@@ -66,27 +66,27 @@
       <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap:VirtualizedContainerService.HintSize="625,6335" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Get Weather details from Open weather map api" sap:VirtualizedContainerService.HintSize="336,528" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="strXML" />
-      <Variable x:TypeArguments="x:String" Name="xmlFilePath" />
+      <Variable x:TypeArguments="x:String" Name="strXMLFilePath" />
       <Variable x:TypeArguments="sxl:XDocument" Name="xDoc1" />
-      <Variable x:TypeArguments="x:String" Name="xmlFromDateTime" />
-      <Variable x:TypeArguments="x:String" Name="getJustDate" />
-      <Variable x:TypeArguments="s:String[]" Default="[new string(){}]" Name="splitArrayFrom" />
-      <Variable x:TypeArguments="x:String" Default="[argMatchDate]" Name="vMatchDate" />
-      <Variable x:TypeArguments="x:String" Name="vDaySession1" />
-      <Variable x:TypeArguments="x:String" Name="vDaySession2" />
-      <Variable x:TypeArguments="x:String" Name="vDaySession3" />
-      <Variable x:TypeArguments="x:String" Name="vDaySession4" />
-      <Variable x:TypeArguments="x:String" Name="vDaySession5" />
-      <Variable x:TypeArguments="x:String" Name="xmlToDateTime" />
-      <Variable x:TypeArguments="x:String" Default="0" Name="vMaxTemp" />
-      <Variable x:TypeArguments="x:String" Default="0" Name="vMinTemp" />
-      <Variable x:TypeArguments="x:Double" Default="0" Name="vMaxFarenheit" />
-      <Variable x:TypeArguments="x:Double" Default="0" Name="vMinFarenheit" />
-      <Variable x:TypeArguments="s:String[]" Default="[new string(){}]" Name="splitArrayTo" />
-      <Variable x:TypeArguments="x:String" Default="[argWeatherAPIendpoint]" Name="weatherAPIEndpoint" />
+      <Variable x:TypeArguments="x:String" Name="strXMLFromDateTime" />
+      <Variable x:TypeArguments="x:String" Name="strGetJustDate" />
+      <Variable x:TypeArguments="s:String[]" Default="[new string(){}]" Name="straSplitArrayFrom" />
+      <Variable x:TypeArguments="x:String" Default="[argMatchDate]" Name="strMatchDate" />
+      <Variable x:TypeArguments="x:String" Name="strDaySession1" />
+      <Variable x:TypeArguments="x:String" Name="strDaySession2" />
+      <Variable x:TypeArguments="x:String" Name="strDaySession3" />
+      <Variable x:TypeArguments="x:String" Name="strDaySession4" />
+      <Variable x:TypeArguments="x:String" Name="strDaySession5" />
+      <Variable x:TypeArguments="x:String" Name="strXMLToDateTime" />
+      <Variable x:TypeArguments="x:String" Default="0" Name="strMaxTemp" />
+      <Variable x:TypeArguments="x:String" Default="0" Name="strMinTemp" />
+      <Variable x:TypeArguments="x:Double" Default="0" Name="dMaxFarenheit" />
+      <Variable x:TypeArguments="x:Double" Default="0" Name="dMinFarenheit" />
+      <Variable x:TypeArguments="s:String[]" Default="[new string(){}]" Name="strSplitArrayTo" />
+      <Variable x:TypeArguments="x:String" Default="[argWeatherAPIendpoint]" Name="strWeatherAPIEndpoint" />
       <Variable x:TypeArguments="x:String" Default="[argVenueZIp]" Name="strVenueZip" />
       <Variable x:TypeArguments="x:String" Default="[argWeatherAPIKey]" Name="strWeatherAPIKey" />
       <Variable x:TypeArguments="x:String" Name="strWeatherText" />
@@ -96,7 +96,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:HttpClient Body="{x:Null}" ConsumerKey="{x:Null}" ConsumerSecret="{x:Null}" ContinueOnError="{x:Null}" OAuth1Token="{x:Null}" OAuth1TokenSecret="{x:Null}" OAuth2Token="{x:Null}" Password="{x:Null}" ResourcePath="{x:Null}" ResponseHeaders="{x:Null}" StatusCode="{x:Null}" Username="{x:Null}" AcceptFormat="XML" BodyFormat="application/xml" ClientCertificate="[Nothing]" ClientCertificatePassword="[Nothing]" DisplayName="HTTP Request" EndPoint="[weatherAPIEndpoint]" sap:VirtualizedContainerService.HintSize="603,22" sap2010:WorkflowViewState.IdRef="HttpClient_2" Method="GET" Result="[strXML]" TimeoutMS="6000">
+    <ui:HttpClient Body="{x:Null}" ConsumerKey="{x:Null}" ConsumerSecret="{x:Null}" ContinueOnError="{x:Null}" OAuth1Token="{x:Null}" OAuth1TokenSecret="{x:Null}" OAuth2Token="{x:Null}" Password="{x:Null}" ResourcePath="{x:Null}" ResponseHeaders="{x:Null}" StatusCode="{x:Null}" Username="{x:Null}" AcceptFormat="XML" BodyFormat="application/xml" ClientCertificate="[Nothing]" ClientCertificatePassword="[Nothing]" DisplayName="HTTP Request for Open Weather Map API" EndPoint="[strWeatherAPIEndpoint]" sap:VirtualizedContainerService.HintSize="314,22" sap2010:WorkflowViewState.IdRef="HttpClient_2" Method="GET" Result="[strXML]" TimeoutMS="6000">
       <ui:HttpClient.Attachments>
         <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
       </ui:HttpClient.Attachments>
@@ -115,14 +115,14 @@
         <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
       </ui:HttpClient.UrlSegments>
     </ui:HttpClient>
-    <ui:DeserializeXml DisplayName="Deserialize XML" sap:VirtualizedContainerService.HintSize="603,60" sap2010:WorkflowViewState.IdRef="DeserializeXml_1" XMLDocument="[xDoc1]" XMLString="[strXML]" />
-    <ui:ForEach x:TypeArguments="sxl:XElement" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="603,5478" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[xDoc1.Element(&quot;weatherdata&quot;).Element(&quot;forecast&quot;).Elements(&quot;time&quot;)]">
+    <ui:DeserializeXml DisplayName="Deserialize XML from Open weather API request" sap:VirtualizedContainerService.HintSize="314,60" sap2010:WorkflowViewState.IdRef="DeserializeXml_1" XMLDocument="[xDoc1]" XMLString="[strXML]" />
+    <ui:ForEach x:TypeArguments="sxl:XElement" CurrentIndex="{x:Null}" DisplayName="For Each item in weather XML" sap:VirtualizedContainerService.HintSize="314,51" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[xDoc1.Element(&quot;weatherdata&quot;).Element(&quot;forecast&quot;).Elements(&quot;time&quot;)]">
       <ui:ForEach.Body>
         <ActivityAction x:TypeArguments="sxl:XElement">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="sxl:XElement" Name="item" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="486,5344" sap2010:WorkflowViewState.IdRef="Sequence_6">
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="486,1820" sap2010:WorkflowViewState.IdRef="Sequence_6">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -130,7 +130,7 @@
             </sap:WorkflowViewStateService.ViewState>
             <Assign sap:VirtualizedContainerService.HintSize="464,60" sap2010:WorkflowViewState.IdRef="Assign_1">
               <Assign.To>
-                <OutArgument x:TypeArguments="x:String">[xmlFromDateTime]</OutArgument>
+                <OutArgument x:TypeArguments="x:String">[strXMLFromDateTime]</OutArgument>
               </Assign.To>
               <Assign.Value>
                 <InArgument x:TypeArguments="x:String">[item.Attribute("from").Value]</InArgument>
@@ -138,7 +138,7 @@
             </Assign>
             <Assign sap:VirtualizedContainerService.HintSize="464,60" sap2010:WorkflowViewState.IdRef="Assign_8">
               <Assign.To>
-                <OutArgument x:TypeArguments="x:String">[xmlToDateTime]</OutArgument>
+                <OutArgument x:TypeArguments="x:String">[strXMLToDateTime]</OutArgument>
               </Assign.To>
               <Assign.Value>
                 <InArgument x:TypeArguments="x:String">[item.Attribute("to").Value]</InArgument>
@@ -146,23 +146,29 @@
             </Assign>
             <Assign sap:VirtualizedContainerService.HintSize="464,60" sap2010:WorkflowViewState.IdRef="Assign_2">
               <Assign.To>
-                <OutArgument x:TypeArguments="s:String[]">[splitArrayFrom]</OutArgument>
+                <OutArgument x:TypeArguments="s:String[]">[straSplitArrayFrom]</OutArgument>
               </Assign.To>
               <Assign.Value>
-                <InArgument x:TypeArguments="s:String[]">[xmlFromDateTime.Split(convert.ToChar("T"))]</InArgument>
+                <InArgument x:TypeArguments="s:String[]">[strXMLFromDateTime.Split(convert.ToChar("T"))]</InArgument>
               </Assign.Value>
             </Assign>
             <Assign sap:VirtualizedContainerService.HintSize="464,60" sap2010:WorkflowViewState.IdRef="Assign_16">
               <Assign.To>
-                <OutArgument x:TypeArguments="s:String[]">[splitArrayTo]</OutArgument>
+                <OutArgument x:TypeArguments="s:String[]">[strSplitArrayTo]</OutArgument>
               </Assign.To>
               <Assign.Value>
-                <InArgument x:TypeArguments="s:String[]">[xmlToDateTime.Split(convert.ToChar("T"))]</InArgument>
+                <InArgument x:TypeArguments="s:String[]">[strXMLToDateTime.Split(convert.ToChar("T"))]</InArgument>
               </Assign.Value>
             </Assign>
-            <If Condition="[splitArrayFrom(0)= vMatchDate AND (splitArrayFrom(1) =&quot;06:00:00&quot;)]" DisplayName="If (6 AM to 9 AM)" sap:VirtualizedContainerService.HintSize="464,932" sap2010:WorkflowViewState.IdRef="If_1">
+            <If Condition="[straSplitArrayFrom(0)= strMatchDate AND (straSplitArrayFrom(1) =&quot;06:00:00&quot;)]" DisplayName="If (6 AM to 9 AM)" sap:VirtualizedContainerService.HintSize="464,932" sap2010:WorkflowViewState.IdRef="If_1">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
               <If.Then>
-                <Sequence sap:VirtualizedContainerService.HintSize="264,784" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                <Sequence DisplayName="Get Weather condition from 6 A.M to 9 A.M" sap:VirtualizedContainerService.HintSize="264,784" sap2010:WorkflowViewState.IdRef="Sequence_7">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="x:String" Name="strWeatherCondition" />
                   </Sequence.Variables>
@@ -173,7 +179,7 @@
                   </sap:WorkflowViewStateService.ViewState>
                   <Assign sap:VirtualizedContainerService.HintSize="242,60" sap2010:WorkflowViewState.IdRef="Assign_10">
                     <Assign.To>
-                      <OutArgument x:TypeArguments="x:String">[vMaxTemp]</OutArgument>
+                      <OutArgument x:TypeArguments="x:String">[strMaxTemp]</OutArgument>
                     </Assign.To>
                     <Assign.Value>
                       <InArgument x:TypeArguments="x:String">[item.Element("temperature").Attribute("max").Value]</InArgument>
@@ -181,23 +187,23 @@
                   </Assign>
                   <Assign sap:VirtualizedContainerService.HintSize="242,60" sap2010:WorkflowViewState.IdRef="Assign_11">
                     <Assign.To>
-                      <OutArgument x:TypeArguments="x:Double">[vMaxFarenheit]</OutArgument>
+                      <OutArgument x:TypeArguments="x:Double">[dMaxFarenheit]</OutArgument>
                     </Assign.To>
                     <Assign.Value>
-                      <InArgument x:TypeArguments="x:Double">[convert.ToDouble(vMaxTemp)]</InArgument>
+                      <InArgument x:TypeArguments="x:Double">[convert.ToDouble(strMaxTemp)]</InArgument>
                     </Assign.Value>
                   </Assign>
                   <Assign sap:VirtualizedContainerService.HintSize="242,60" sap2010:WorkflowViewState.IdRef="Assign_12">
                     <Assign.To>
-                      <OutArgument x:TypeArguments="x:Double">[vMaxFarenheit]</OutArgument>
+                      <OutArgument x:TypeArguments="x:Double">[dMaxFarenheit]</OutArgument>
                     </Assign.To>
                     <Assign.Value>
-                      <InArgument x:TypeArguments="x:Double">[(vMaxFarenheit - 273.15)*(1.8)+32]</InArgument>
+                      <InArgument x:TypeArguments="x:Double">[(dMaxFarenheit - 273.15)*(1.8)+32]</InArgument>
                     </Assign.Value>
                   </Assign>
                   <Assign sap:VirtualizedContainerService.HintSize="242,60" sap2010:WorkflowViewState.IdRef="Assign_13">
                     <Assign.To>
-                      <OutArgument x:TypeArguments="x:String">[vMinTemp]</OutArgument>
+                      <OutArgument x:TypeArguments="x:String">[strMinTemp]</OutArgument>
                     </Assign.To>
                     <Assign.Value>
                       <InArgument x:TypeArguments="x:String">[item.Element("temperature").Attribute("min").Value]</InArgument>
@@ -205,34 +211,40 @@
                   </Assign>
                   <Assign sap:VirtualizedContainerService.HintSize="242,60" sap2010:WorkflowViewState.IdRef="Assign_14">
                     <Assign.To>
-                      <OutArgument x:TypeArguments="x:Double">[vMinFarenheit]</OutArgument>
+                      <OutArgument x:TypeArguments="x:Double">[dMinFarenheit]</OutArgument>
                     </Assign.To>
                     <Assign.Value>
-                      <InArgument x:TypeArguments="x:Double">[convert.ToDouble(vMinTemp)]</InArgument>
+                      <InArgument x:TypeArguments="x:Double">[convert.ToDouble(strMinTemp)]</InArgument>
                     </Assign.Value>
                   </Assign>
                   <Assign sap:VirtualizedContainerService.HintSize="242,60" sap2010:WorkflowViewState.IdRef="Assign_15">
                     <Assign.To>
-                      <OutArgument x:TypeArguments="x:Double">[vMinFarenheit]</OutArgument>
+                      <OutArgument x:TypeArguments="x:Double">[dMinFarenheit]</OutArgument>
                     </Assign.To>
                     <Assign.Value>
-                      <InArgument x:TypeArguments="x:Double">[(vMinFarenheit - 273.15)*(1.8)+32]</InArgument>
+                      <InArgument x:TypeArguments="x:Double">[(dMinFarenheit - 273.15)*(1.8)+32]</InArgument>
                     </Assign.Value>
                   </Assign>
                   <Assign sap:VirtualizedContainerService.HintSize="242,60" sap2010:WorkflowViewState.IdRef="Assign_9">
                     <Assign.To>
-                      <OutArgument x:TypeArguments="x:String">[vDaySession1]</OutArgument>
+                      <OutArgument x:TypeArguments="x:String">[strDaySession1]</OutArgument>
                     </Assign.To>
                     <Assign.Value>
-                      <InArgument x:TypeArguments="x:String">["Date :"+splitArrayFrom(0) +" Time Period: "+splitArrayFrom(1)+" to "+splitArrayTo(1)+environment.NewLine+"1) Weather condition is : "+item.Element("symbol").Attribute("name").Value +environment.NewLine+"2) Clouds: "+item.Element("clouds").Attribute("value").Value +environment.NewLine+ "3) wind speed: "+item.Element("windSpeed").Attribute("mps").Value+"mps." +environment.NewLine+ "4) Max Temp: "+cint(vMaxFarenheit).ToString+" F "+ "Min Temp: "+cint(vMinFarenheit).ToString+ " F"]</InArgument>
+                      <InArgument x:TypeArguments="x:String">["Date :"+straSplitArrayFrom(0) +" Time Period: "+straSplitArrayFrom(1)+" to "+strSplitArrayTo(1)+environment.NewLine+"1) Weather condition is : "+item.Element("symbol").Attribute("name").Value +environment.NewLine+"2) Clouds: "+item.Element("clouds").Attribute("value").Value +environment.NewLine+ "3) wind speed: "+item.Element("windSpeed").Attribute("mps").Value+"mps." +environment.NewLine+ "4) Max Temp: "+cint(dMaxFarenheit).ToString+" F "+ "Min Temp: "+cint(dMinFarenheit).ToString+ " F"]</InArgument>
                     </Assign.Value>
                   </Assign>
                 </Sequence>
               </If.Then>
             </If>
-            <If Condition="[splitArrayFrom(0).ToString= vMatchDate AND (splitArrayFrom(1).ToString =&quot;09:00:00&quot;)]" sap:VirtualizedContainerService.HintSize="464,932" sap2010:WorkflowViewState.IdRef="If_2">
+            <If Condition="[straSplitArrayFrom(0).ToString= strMatchDate AND (straSplitArrayFrom(1).ToString =&quot;09:00:00&quot;)]" DisplayName="If 9 A.M to 12 P.M" sap:VirtualizedContainerService.HintSize="464,51" sap2010:WorkflowViewState.IdRef="If_2">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
               <If.Then>
-                <Sequence sap:VirtualizedContainerService.HintSize="264,784" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                <Sequence DisplayName="Get Weather condition from 9 A.M to 12 P.M" sap:VirtualizedContainerService.HintSize="264,784" sap2010:WorkflowViewState.IdRef="Sequence_8">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -240,7 +252,7 @@
                   </sap:WorkflowViewStateService.ViewState>
                   <Assign sap:VirtualizedContainerService.HintSize="242,60" sap2010:WorkflowViewState.IdRef="Assign_17">
                     <Assign.To>
-                      <OutArgument x:TypeArguments="x:String">[vMaxTemp]</OutArgument>
+                      <OutArgument x:TypeArguments="x:String">[strMaxTemp]</OutArgument>
                     </Assign.To>
                     <Assign.Value>
                       <InArgument x:TypeArguments="x:String">[item.Element("temperature").Attribute("max").Value]</InArgument>
@@ -248,23 +260,23 @@
                   </Assign>
                   <Assign sap:VirtualizedContainerService.HintSize="242,60" sap2010:WorkflowViewState.IdRef="Assign_18">
                     <Assign.To>
-                      <OutArgument x:TypeArguments="x:Double">[vMaxFarenheit]</OutArgument>
+                      <OutArgument x:TypeArguments="x:Double">[dMaxFarenheit]</OutArgument>
                     </Assign.To>
                     <Assign.Value>
-                      <InArgument x:TypeArguments="x:Double">[convert.ToDouble(vMaxTemp)]</InArgument>
+                      <InArgument x:TypeArguments="x:Double">[convert.ToDouble(strMaxTemp)]</InArgument>
                     </Assign.Value>
                   </Assign>
                   <Assign sap:VirtualizedContainerService.HintSize="242,60" sap2010:WorkflowViewState.IdRef="Assign_19">
                     <Assign.To>
-                      <OutArgument x:TypeArguments="x:Double">[vMaxFarenheit]</OutArgument>
+                      <OutArgument x:TypeArguments="x:Double">[dMaxFarenheit]</OutArgument>
                     </Assign.To>
                     <Assign.Value>
-                      <InArgument x:TypeArguments="x:Double">[(vMaxFarenheit - 273.15)*(1.8)+32]</InArgument>
+                      <InArgument x:TypeArguments="x:Double">[(dMaxFarenheit - 273.15)*(1.8)+32]</InArgument>
                     </Assign.Value>
                   </Assign>
                   <Assign sap:VirtualizedContainerService.HintSize="242,60" sap2010:WorkflowViewState.IdRef="Assign_20">
                     <Assign.To>
-                      <OutArgument x:TypeArguments="x:String">[vMinTemp]</OutArgument>
+                      <OutArgument x:TypeArguments="x:String">[strMinTemp]</OutArgument>
                     </Assign.To>
                     <Assign.Value>
                       <InArgument x:TypeArguments="x:String">[item.Element("temperature").Attribute("min").Value]</InArgument>
@@ -272,34 +284,40 @@
                   </Assign>
                   <Assign sap:VirtualizedContainerService.HintSize="242,60" sap2010:WorkflowViewState.IdRef="Assign_21">
                     <Assign.To>
-                      <OutArgument x:TypeArguments="x:Double">[vMinFarenheit]</OutArgument>
+                      <OutArgument x:TypeArguments="x:Double">[dMinFarenheit]</OutArgument>
                     </Assign.To>
                     <Assign.Value>
-                      <InArgument x:TypeArguments="x:Double">[convert.ToDouble(vMinTemp)]</InArgument>
+                      <InArgument x:TypeArguments="x:Double">[convert.ToDouble(strMinTemp)]</InArgument>
                     </Assign.Value>
                   </Assign>
                   <Assign sap:VirtualizedContainerService.HintSize="242,60" sap2010:WorkflowViewState.IdRef="Assign_22">
                     <Assign.To>
-                      <OutArgument x:TypeArguments="x:Double">[vMinFarenheit]</OutArgument>
+                      <OutArgument x:TypeArguments="x:Double">[dMinFarenheit]</OutArgument>
                     </Assign.To>
                     <Assign.Value>
-                      <InArgument x:TypeArguments="x:Double">[(vMinFarenheit - 273.15)*(1.8)+32]</InArgument>
+                      <InArgument x:TypeArguments="x:Double">[(dMinFarenheit - 273.15)*(1.8)+32]</InArgument>
                     </Assign.Value>
                   </Assign>
                   <Assign sap:VirtualizedContainerService.HintSize="242,60" sap2010:WorkflowViewState.IdRef="Assign_4">
                     <Assign.To>
-                      <OutArgument x:TypeArguments="x:String">[vDaySession2]</OutArgument>
+                      <OutArgument x:TypeArguments="x:String">[strDaySession2]</OutArgument>
                     </Assign.To>
                     <Assign.Value>
-                      <InArgument x:TypeArguments="x:String">["Date :"+splitArrayFrom(0) +" Time Period: "+splitArrayFrom(1)+" to "+splitArrayTo(1)+environment.NewLine+"1) Weather condition is : "+item.Element("symbol").Attribute("name").Value +environment.NewLine+"2) Clouds: "+item.Element("clouds").Attribute("value").Value +environment.NewLine+ "3) wind speed: "+item.Element("windSpeed").Attribute("mps").Value+"mps." +environment.NewLine+ "4) Max Temp: "+cint(vMaxFarenheit).ToString+" F "+ "Min Temp: "+cint(vMinFarenheit).ToString+ " F"]</InArgument>
+                      <InArgument x:TypeArguments="x:String">["Date :"+straSplitArrayFrom(0) +" Time Period: "+straSplitArrayFrom(1)+" to "+strSplitArrayTo(1)+environment.NewLine+"1) Weather condition is : "+item.Element("symbol").Attribute("name").Value +environment.NewLine+"2) Clouds: "+item.Element("clouds").Attribute("value").Value +environment.NewLine+ "3) wind speed: "+item.Element("windSpeed").Attribute("mps").Value+"mps." +environment.NewLine+ "4) Max Temp: "+cint(dMaxFarenheit).ToString+" F "+ "Min Temp: "+cint(dMinFarenheit).ToString+ " F"]</InArgument>
                     </Assign.Value>
                   </Assign>
                 </Sequence>
               </If.Then>
             </If>
-            <If Condition="[splitArrayFrom(0).ToString= vMatchDate AND (splitArrayFrom(1).ToString =&quot;12:00:00&quot;)]" sap:VirtualizedContainerService.HintSize="464,932" sap2010:WorkflowViewState.IdRef="If_3">
+            <If Condition="[straSplitArrayFrom(0).ToString= strMatchDate AND (straSplitArrayFrom(1).ToString =&quot;12:00:00&quot;)]" DisplayName="If 12 P.M to 3 P.M" sap:VirtualizedContainerService.HintSize="464,51" sap2010:WorkflowViewState.IdRef="If_3">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
               <If.Then>
-                <Sequence sap:VirtualizedContainerService.HintSize="264,784" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                <Sequence DisplayName="Get Weather condition from 12 P.M to 3 P.M" sap:VirtualizedContainerService.HintSize="264,784" sap2010:WorkflowViewState.IdRef="Sequence_9">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -307,7 +325,7 @@
                   </sap:WorkflowViewStateService.ViewState>
                   <Assign sap:VirtualizedContainerService.HintSize="242,60" sap2010:WorkflowViewState.IdRef="Assign_23">
                     <Assign.To>
-                      <OutArgument x:TypeArguments="x:String">[vMaxTemp]</OutArgument>
+                      <OutArgument x:TypeArguments="x:String">[strMaxTemp]</OutArgument>
                     </Assign.To>
                     <Assign.Value>
                       <InArgument x:TypeArguments="x:String">[item.Element("temperature").Attribute("max").Value]</InArgument>
@@ -315,23 +333,23 @@
                   </Assign>
                   <Assign sap:VirtualizedContainerService.HintSize="242,60" sap2010:WorkflowViewState.IdRef="Assign_24">
                     <Assign.To>
-                      <OutArgument x:TypeArguments="x:Double">[vMaxFarenheit]</OutArgument>
+                      <OutArgument x:TypeArguments="x:Double">[dMaxFarenheit]</OutArgument>
                     </Assign.To>
                     <Assign.Value>
-                      <InArgument x:TypeArguments="x:Double">[convert.ToDouble(vMaxTemp)]</InArgument>
+                      <InArgument x:TypeArguments="x:Double">[convert.ToDouble(strMaxTemp)]</InArgument>
                     </Assign.Value>
                   </Assign>
                   <Assign sap:VirtualizedContainerService.HintSize="242,60" sap2010:WorkflowViewState.IdRef="Assign_25">
                     <Assign.To>
-                      <OutArgument x:TypeArguments="x:Double">[vMaxFarenheit]</OutArgument>
+                      <OutArgument x:TypeArguments="x:Double">[dMaxFarenheit]</OutArgument>
                     </Assign.To>
                     <Assign.Value>
-                      <InArgument x:TypeArguments="x:Double">[(vMaxFarenheit - 273.15)*(1.8)+32]</InArgument>
+                      <InArgument x:TypeArguments="x:Double">[(dMaxFarenheit - 273.15)*(1.8)+32]</InArgument>
                     </Assign.Value>
                   </Assign>
                   <Assign sap:VirtualizedContainerService.HintSize="242,60" sap2010:WorkflowViewState.IdRef="Assign_26">
                     <Assign.To>
-                      <OutArgument x:TypeArguments="x:String">[vMinTemp]</OutArgument>
+                      <OutArgument x:TypeArguments="x:String">[strMinTemp]</OutArgument>
                     </Assign.To>
                     <Assign.Value>
                       <InArgument x:TypeArguments="x:String">[item.Element("temperature").Attribute("min").Value]</InArgument>
@@ -339,34 +357,40 @@
                   </Assign>
                   <Assign sap:VirtualizedContainerService.HintSize="242,60" sap2010:WorkflowViewState.IdRef="Assign_27">
                     <Assign.To>
-                      <OutArgument x:TypeArguments="x:Double">[vMinFarenheit]</OutArgument>
+                      <OutArgument x:TypeArguments="x:Double">[dMinFarenheit]</OutArgument>
                     </Assign.To>
                     <Assign.Value>
-                      <InArgument x:TypeArguments="x:Double">[convert.ToDouble(vMinTemp)]</InArgument>
+                      <InArgument x:TypeArguments="x:Double">[convert.ToDouble(strMinTemp)]</InArgument>
                     </Assign.Value>
                   </Assign>
                   <Assign sap:VirtualizedContainerService.HintSize="242,60" sap2010:WorkflowViewState.IdRef="Assign_28">
                     <Assign.To>
-                      <OutArgument x:TypeArguments="x:Double">[vMinFarenheit]</OutArgument>
+                      <OutArgument x:TypeArguments="x:Double">[dMinFarenheit]</OutArgument>
                     </Assign.To>
                     <Assign.Value>
-                      <InArgument x:TypeArguments="x:Double">[(vMinFarenheit - 273.15)*(1.8)+32]</InArgument>
+                      <InArgument x:TypeArguments="x:Double">[(dMinFarenheit - 273.15)*(1.8)+32]</InArgument>
                     </Assign.Value>
                   </Assign>
                   <Assign sap:VirtualizedContainerService.HintSize="242,60" sap2010:WorkflowViewState.IdRef="Assign_5">
                     <Assign.To>
-                      <OutArgument x:TypeArguments="x:String">[vDaySession3]</OutArgument>
+                      <OutArgument x:TypeArguments="x:String">[strDaySession3]</OutArgument>
                     </Assign.To>
                     <Assign.Value>
-                      <InArgument x:TypeArguments="x:String">["Date :"+splitArrayFrom(0) +" Time Period: "+splitArrayFrom(1)+" to "+splitArrayTo(1)+environment.NewLine+"1) Weather condition is : "+item.Element("symbol").Attribute("name").Value +environment.NewLine+"2) Clouds: "+item.Element("clouds").Attribute("value").Value +environment.NewLine+ "3) wind speed: "+item.Element("windSpeed").Attribute("mps").Value+"mps." +environment.NewLine+ "4) Max Temp: "+cint(vMaxFarenheit).ToString+" F "+ "Min Temp: "+cint(vMinFarenheit).ToString+ " F"]</InArgument>
+                      <InArgument x:TypeArguments="x:String">["Date :"+straSplitArrayFrom(0) +" Time Period: "+straSplitArrayFrom(1)+" to "+strSplitArrayTo(1)+environment.NewLine+"1) Weather condition is : "+item.Element("symbol").Attribute("name").Value +environment.NewLine+"2) Clouds: "+item.Element("clouds").Attribute("value").Value +environment.NewLine+ "3) wind speed: "+item.Element("windSpeed").Attribute("mps").Value+"mps." +environment.NewLine+ "4) Max Temp: "+cint(dMaxFarenheit).ToString+" F "+ "Min Temp: "+cint(dMinFarenheit).ToString+ " F"]</InArgument>
                     </Assign.Value>
                   </Assign>
                 </Sequence>
               </If.Then>
             </If>
-            <If Condition="[splitArrayFrom(0).ToString= vMatchDate AND (splitArrayFrom(1).ToString =&quot;15:00:00&quot;)]" sap:VirtualizedContainerService.HintSize="464,932" sap2010:WorkflowViewState.IdRef="If_4">
+            <If Condition="[straSplitArrayFrom(0).ToString= strMatchDate AND (straSplitArrayFrom(1).ToString =&quot;15:00:00&quot;)]" DisplayName="If 3 P.M to 6 P.M" sap:VirtualizedContainerService.HintSize="464,51" sap2010:WorkflowViewState.IdRef="If_4">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
               <If.Then>
-                <Sequence sap:VirtualizedContainerService.HintSize="264,784" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                <Sequence DisplayName="Get Weather condition from 3 P.M to 6 P.M" sap:VirtualizedContainerService.HintSize="264,784" sap2010:WorkflowViewState.IdRef="Sequence_10">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -374,7 +398,7 @@
                   </sap:WorkflowViewStateService.ViewState>
                   <Assign sap:VirtualizedContainerService.HintSize="242,60" sap2010:WorkflowViewState.IdRef="Assign_29">
                     <Assign.To>
-                      <OutArgument x:TypeArguments="x:String">[vMaxTemp]</OutArgument>
+                      <OutArgument x:TypeArguments="x:String">[strMaxTemp]</OutArgument>
                     </Assign.To>
                     <Assign.Value>
                       <InArgument x:TypeArguments="x:String">[item.Element("temperature").Attribute("max").Value]</InArgument>
@@ -382,23 +406,23 @@
                   </Assign>
                   <Assign sap:VirtualizedContainerService.HintSize="242,60" sap2010:WorkflowViewState.IdRef="Assign_30">
                     <Assign.To>
-                      <OutArgument x:TypeArguments="x:Double">[vMaxFarenheit]</OutArgument>
+                      <OutArgument x:TypeArguments="x:Double">[dMaxFarenheit]</OutArgument>
                     </Assign.To>
                     <Assign.Value>
-                      <InArgument x:TypeArguments="x:Double">[convert.ToDouble(vMaxTemp)]</InArgument>
+                      <InArgument x:TypeArguments="x:Double">[convert.ToDouble(strMaxTemp)]</InArgument>
                     </Assign.Value>
                   </Assign>
                   <Assign sap:VirtualizedContainerService.HintSize="242,60" sap2010:WorkflowViewState.IdRef="Assign_31">
                     <Assign.To>
-                      <OutArgument x:TypeArguments="x:Double">[vMaxFarenheit]</OutArgument>
+                      <OutArgument x:TypeArguments="x:Double">[dMaxFarenheit]</OutArgument>
                     </Assign.To>
                     <Assign.Value>
-                      <InArgument x:TypeArguments="x:Double">[(vMaxFarenheit - 273.15)*(1.8)+32]</InArgument>
+                      <InArgument x:TypeArguments="x:Double">[(dMaxFarenheit - 273.15)*(1.8)+32]</InArgument>
                     </Assign.Value>
                   </Assign>
                   <Assign sap:VirtualizedContainerService.HintSize="242,60" sap2010:WorkflowViewState.IdRef="Assign_32">
                     <Assign.To>
-                      <OutArgument x:TypeArguments="x:String">[vMinTemp]</OutArgument>
+                      <OutArgument x:TypeArguments="x:String">[strMinTemp]</OutArgument>
                     </Assign.To>
                     <Assign.Value>
                       <InArgument x:TypeArguments="x:String">[item.Element("temperature").Attribute("min").Value]</InArgument>
@@ -406,34 +430,40 @@
                   </Assign>
                   <Assign sap:VirtualizedContainerService.HintSize="242,60" sap2010:WorkflowViewState.IdRef="Assign_33">
                     <Assign.To>
-                      <OutArgument x:TypeArguments="x:Double">[vMinFarenheit]</OutArgument>
+                      <OutArgument x:TypeArguments="x:Double">[dMinFarenheit]</OutArgument>
                     </Assign.To>
                     <Assign.Value>
-                      <InArgument x:TypeArguments="x:Double">[convert.ToDouble(vMinTemp)]</InArgument>
+                      <InArgument x:TypeArguments="x:Double">[convert.ToDouble(strMinTemp)]</InArgument>
                     </Assign.Value>
                   </Assign>
                   <Assign sap:VirtualizedContainerService.HintSize="242,60" sap2010:WorkflowViewState.IdRef="Assign_34">
                     <Assign.To>
-                      <OutArgument x:TypeArguments="x:Double">[vMinFarenheit]</OutArgument>
+                      <OutArgument x:TypeArguments="x:Double">[dMinFarenheit]</OutArgument>
                     </Assign.To>
                     <Assign.Value>
-                      <InArgument x:TypeArguments="x:Double">[(vMinFarenheit - 273.15)*(1.8)+32]</InArgument>
+                      <InArgument x:TypeArguments="x:Double">[(dMinFarenheit - 273.15)*(1.8)+32]</InArgument>
                     </Assign.Value>
                   </Assign>
                   <Assign sap:VirtualizedContainerService.HintSize="242,60" sap2010:WorkflowViewState.IdRef="Assign_6">
                     <Assign.To>
-                      <OutArgument x:TypeArguments="x:String">[vDaySession4]</OutArgument>
+                      <OutArgument x:TypeArguments="x:String">[strDaySession4]</OutArgument>
                     </Assign.To>
                     <Assign.Value>
-                      <InArgument x:TypeArguments="x:String">["Date :"+splitArrayFrom(0) +" Time Period: "+splitArrayFrom(1)+" to "+splitArrayTo(1)+environment.NewLine+"1) Weather condition is : "+item.Element("symbol").Attribute("name").Value +environment.NewLine+"2) Clouds: "+item.Element("clouds").Attribute("value").Value +environment.NewLine+ "3) wind speed: "+item.Element("windSpeed").Attribute("mps").Value+"mps." +environment.NewLine+ "4) Max Temp: "+cint(vMaxFarenheit).ToString+" F "+ "Min Temp: "+cint(vMinFarenheit).ToString+ " F"]</InArgument>
+                      <InArgument x:TypeArguments="x:String">["Date :"+straSplitArrayFrom(0) +" Time Period: "+straSplitArrayFrom(1)+" to "+strSplitArrayTo(1)+environment.NewLine+"1) Weather condition is : "+item.Element("symbol").Attribute("name").Value +environment.NewLine+"2) Clouds: "+item.Element("clouds").Attribute("value").Value +environment.NewLine+ "3) wind speed: "+item.Element("windSpeed").Attribute("mps").Value+"mps." +environment.NewLine+ "4) Max Temp: "+cint(dMaxFarenheit).ToString+" F "+ "Min Temp: "+cint(dMinFarenheit).ToString+ " F"]</InArgument>
                     </Assign.Value>
                   </Assign>
                 </Sequence>
               </If.Then>
             </If>
-            <If Condition="[splitArrayFrom(0).ToString= vMatchDate AND (splitArrayFrom(1).ToString =&quot;18:00:00&quot;)]" sap:VirtualizedContainerService.HintSize="464,932" sap2010:WorkflowViewState.IdRef="If_5">
+            <If Condition="[straSplitArrayFrom(0).ToString= strMatchDate AND (straSplitArrayFrom(1).ToString =&quot;18:00:00&quot;)]" DisplayName="If 6 P.M to 9 P.M" sap:VirtualizedContainerService.HintSize="464,51" sap2010:WorkflowViewState.IdRef="If_5">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
               <If.Then>
-                <Sequence sap:VirtualizedContainerService.HintSize="264,784" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                <Sequence DisplayName="Get Weather condition from 6 P.M to 9 P.M" sap:VirtualizedContainerService.HintSize="264,784" sap2010:WorkflowViewState.IdRef="Sequence_11">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -441,7 +471,7 @@
                   </sap:WorkflowViewStateService.ViewState>
                   <Assign sap:VirtualizedContainerService.HintSize="242,60" sap2010:WorkflowViewState.IdRef="Assign_35">
                     <Assign.To>
-                      <OutArgument x:TypeArguments="x:String">[vMaxTemp]</OutArgument>
+                      <OutArgument x:TypeArguments="x:String">[strMaxTemp]</OutArgument>
                     </Assign.To>
                     <Assign.Value>
                       <InArgument x:TypeArguments="x:String">[item.Element("temperature").Attribute("max").Value]</InArgument>
@@ -449,23 +479,23 @@
                   </Assign>
                   <Assign sap:VirtualizedContainerService.HintSize="242,60" sap2010:WorkflowViewState.IdRef="Assign_36">
                     <Assign.To>
-                      <OutArgument x:TypeArguments="x:Double">[vMaxFarenheit]</OutArgument>
+                      <OutArgument x:TypeArguments="x:Double">[dMaxFarenheit]</OutArgument>
                     </Assign.To>
                     <Assign.Value>
-                      <InArgument x:TypeArguments="x:Double">[convert.ToDouble(vMaxTemp)]</InArgument>
+                      <InArgument x:TypeArguments="x:Double">[convert.ToDouble(strMaxTemp)]</InArgument>
                     </Assign.Value>
                   </Assign>
                   <Assign sap:VirtualizedContainerService.HintSize="242,60" sap2010:WorkflowViewState.IdRef="Assign_37">
                     <Assign.To>
-                      <OutArgument x:TypeArguments="x:Double">[vMaxFarenheit]</OutArgument>
+                      <OutArgument x:TypeArguments="x:Double">[dMaxFarenheit]</OutArgument>
                     </Assign.To>
                     <Assign.Value>
-                      <InArgument x:TypeArguments="x:Double">[(vMaxFarenheit - 273.15)*(1.8)+32]</InArgument>
+                      <InArgument x:TypeArguments="x:Double">[(dMaxFarenheit - 273.15)*(1.8)+32]</InArgument>
                     </Assign.Value>
                   </Assign>
                   <Assign sap:VirtualizedContainerService.HintSize="242,60" sap2010:WorkflowViewState.IdRef="Assign_38">
                     <Assign.To>
-                      <OutArgument x:TypeArguments="x:String">[vMinTemp]</OutArgument>
+                      <OutArgument x:TypeArguments="x:String">[strMinTemp]</OutArgument>
                     </Assign.To>
                     <Assign.Value>
                       <InArgument x:TypeArguments="x:String">[item.Element("temperature").Attribute("min").Value]</InArgument>
@@ -473,26 +503,26 @@
                   </Assign>
                   <Assign sap:VirtualizedContainerService.HintSize="242,60" sap2010:WorkflowViewState.IdRef="Assign_39">
                     <Assign.To>
-                      <OutArgument x:TypeArguments="x:Double">[vMinFarenheit]</OutArgument>
+                      <OutArgument x:TypeArguments="x:Double">[dMinFarenheit]</OutArgument>
                     </Assign.To>
                     <Assign.Value>
-                      <InArgument x:TypeArguments="x:Double">[convert.ToDouble(vMinTemp)]</InArgument>
+                      <InArgument x:TypeArguments="x:Double">[convert.ToDouble(strMinTemp)]</InArgument>
                     </Assign.Value>
                   </Assign>
                   <Assign sap:VirtualizedContainerService.HintSize="242,60" sap2010:WorkflowViewState.IdRef="Assign_40">
                     <Assign.To>
-                      <OutArgument x:TypeArguments="x:Double">[vMinFarenheit]</OutArgument>
+                      <OutArgument x:TypeArguments="x:Double">[dMinFarenheit]</OutArgument>
                     </Assign.To>
                     <Assign.Value>
-                      <InArgument x:TypeArguments="x:Double">[(vMinFarenheit - 273.15)*(1.8)+32]</InArgument>
+                      <InArgument x:TypeArguments="x:Double">[(dMinFarenheit - 273.15)*(1.8)+32]</InArgument>
                     </Assign.Value>
                   </Assign>
                   <Assign sap:VirtualizedContainerService.HintSize="242,60" sap2010:WorkflowViewState.IdRef="Assign_7">
                     <Assign.To>
-                      <OutArgument x:TypeArguments="x:String">[vDaySession5]</OutArgument>
+                      <OutArgument x:TypeArguments="x:String">[strDaySession5]</OutArgument>
                     </Assign.To>
                     <Assign.Value>
-                      <InArgument x:TypeArguments="x:String">["Date :"+splitArrayFrom(0) +" Time Period: "+splitArrayFrom(1)+" to "+splitArrayTo(1)+environment.NewLine+"1) Weather condition is : "+item.Element("symbol").Attribute("name").Value +environment.NewLine+"2) Clouds: "+item.Element("clouds").Attribute("value").Value +environment.NewLine+ "3) wind speed: "+item.Element("windSpeed").Attribute("mps").Value+"mps." +environment.NewLine+ "4) Max Temp: "+cint(vMaxFarenheit).ToString+" F "+ "Min Temp: "+cint(vMinFarenheit).ToString+ " F"]</InArgument>
+                      <InArgument x:TypeArguments="x:String">["Date :"+straSplitArrayFrom(0) +" Time Period: "+straSplitArrayFrom(1)+" to "+strSplitArrayTo(1)+environment.NewLine+"1) Weather condition is : "+item.Element("symbol").Attribute("name").Value +environment.NewLine+"2) Clouds: "+item.Element("clouds").Attribute("value").Value +environment.NewLine+ "3) wind speed: "+item.Element("windSpeed").Attribute("mps").Value+"mps." +environment.NewLine+ "4) Max Temp: "+cint(dMaxFarenheit).ToString+" F "+ "Min Temp: "+cint(dMinFarenheit).ToString+ " F"]</InArgument>
                     </Assign.Value>
                   </Assign>
                 </Sequence>
@@ -501,19 +531,25 @@
           </Sequence>
         </ActivityAction>
       </ui:ForEach.Body>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
     </ui:ForEach>
-    <Assign sap:VirtualizedContainerService.HintSize="603,60" sap2010:WorkflowViewState.IdRef="Assign_41">
+    <Assign sap:VirtualizedContainerService.HintSize="314,60" sap2010:WorkflowViewState.IdRef="Assign_41">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[strWeatherText]</OutArgument>
       </Assign.To>
       <Assign.Value>
-        <InArgument x:TypeArguments="x:String">[vDaySession1+environment.NewLine+environment.NewLine+vDaySession2+environment.NewLine+environment.NewLine+vDaySession3+environment.NewLine+environment.NewLine+vDaySession4+environment.NewLine+environment.NewLine+vDaySession5]</InArgument>
+        <InArgument x:TypeArguments="x:String">[strDaySession1+environment.NewLine+environment.NewLine+strDaySession2+environment.NewLine+environment.NewLine+strDaySession3+environment.NewLine+environment.NewLine+strDaySession4+environment.NewLine+environment.NewLine+strDaySession5]</InArgument>
       </Assign.Value>
     </Assign>
-    <If Condition="[string.IsNullOrEmpty(vDaySession1)]" sap:VirtualizedContainerService.HintSize="603,431" sap2010:WorkflowViewState.IdRef="If_6">
+    <If Condition="[string.IsNullOrEmpty(strDaySession1)]" DisplayName="If No Weather Details are available" sap:VirtualizedContainerService.HintSize="314,51" sap2010:WorkflowViewState.IdRef="If_6">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
