@@ -13,7 +13,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>512,920</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>691,1191</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>GoogleCalendarInvite_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="21">
@@ -60,26 +60,52 @@
       <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="GoogleCalendarInvite" sap:VirtualizedContainerService.HintSize="472,840" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="GoogleCalendarInvite" sap:VirtualizedContainerService.HintSize="651,1111" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uga:GSuiteApplicationScope KeyPath="{x:Null}" Password="{x:Null}" ServiceAccountEmail="{x:Null}" UserEmail="{x:Null}" ApiKey="[argGoogleAPIKey]" AuthenticationType="OAuthClientID" CredentialID="[argGoogleClientID]" CredentialSecret="[argGoogleClientSecret]" DisplayName="GSuite Application Scope" HasDomainWideAccesss="False" sap:VirtualizedContainerService.HintSize="450,716" sap2010:WorkflowViewState.IdRef="GSuiteApplicationScope_1" KeyType="JSON" Services="Calendar">
+    <uga:GSuiteApplicationScope KeyPath="{x:Null}" Password="{x:Null}" ServiceAccountEmail="{x:Null}" UserEmail="{x:Null}" ApiKey="[argGoogleAPIKey]" AuthenticationType="OAuthClientID" CredentialID="[argGoogleClientID]" CredentialSecret="[argGoogleClientSecret]" DisplayName="GSuite Application Scope" HasDomainWideAccesss="False" sap:VirtualizedContainerService.HintSize="629,987" sap2010:WorkflowViewState.IdRef="GSuiteApplicationScope_1" KeyType="JSON" Services="Calendar">
       <uga:GSuiteApplicationScope.Body>
         <ActivityAction x:TypeArguments="ug:SimpleObjectContainer">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="ug:SimpleObjectContainer" Name="GSuiteScope" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="436,630" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="615,901" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:String" Name="iEventID" />
+            </Sequence.Variables>
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uga:CreateEvent CalendarId="{x:Null}" EventId="{x:Null}" EventUrl="{x:Null}" RecurringRule="{x:Null}" TimeZone="{x:Null}" AttendeeList="[argAttendees]" Description="[argEventDetails]" DisplayName="Create Event" EndTime="[argEndDateTime]" sap:VirtualizedContainerService.HintSize="414,407" sap2010:WorkflowViewState.IdRef="CreateEvent_1" Location="[argLocation]" SendUpdates="ALL" StartTime="[argStartDateTime]" Status="CONFIRMED" Title="[argEventTitle]" Visibility="DEFAULT" />
-            <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" Buttons="Ok" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="414,59" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[&quot;Invite sent!&quot;]" TopMost="True" />
+            <uga:CreateEvent CalendarId="{x:Null}" EventUrl="{x:Null}" RecurringRule="{x:Null}" TimeZone="{x:Null}" AttendeeList="[argAttendees]" Description="[argEventDetails]" DisplayName="Create Event" EndTime="[argEndDateTime]" EventId="[iEventID]" sap:VirtualizedContainerService.HintSize="593,207" sap2010:WorkflowViewState.IdRef="CreateEvent_1" Location="[argLocation]" SendUpdates="ALL" StartTime="[argStartDateTime]" Status="CONFIRMED" Title="[argEventTitle]" Visibility="DEFAULT" />
+            <If Condition="[iEventID.Equals(&quot;&quot;)]" DisplayName="If calendar invite sent" sap:VirtualizedContainerService.HintSize="593,431" sap2010:WorkflowViewState.IdRef="If_1">
+              <If.Then>
+                <Sequence sap:VirtualizedContainerService.HintSize="336,284" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="314,61" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="Calendar invite not sent" />
+                  <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" Buttons="Ok" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="314,59" sap2010:WorkflowViewState.IdRef="MessageBox_2" Text="[&quot;Calendar invite not sent&quot;]" TopMost="True" />
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence sap:VirtualizedContainerService.HintSize="232,185" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="210,61" sap2010:WorkflowViewState.IdRef="WriteLine_2" Text="calendar invite sent" />
+                </Sequence>
+              </If.Else>
+            </If>
+            <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" Buttons="Ok" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="593,59" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[&quot;Invite sent!&quot;]" TopMost="True" />
           </Sequence>
         </ActivityAction>
       </uga:GSuiteApplicationScope.Body>
