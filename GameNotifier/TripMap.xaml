@@ -10,7 +10,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>376,526</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>633,798</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>TripMap_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="22">
@@ -64,7 +64,7 @@
       <AssemblyReference>Newtonsoft.Json</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="TripMap" sap:VirtualizedContainerService.HintSize="336,446" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="TripMap" sap:VirtualizedContainerService.HintSize="593,718" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="strXmlOutput" />
       <Variable x:TypeArguments="sxl:XDocument" Name="xmlDocObject" />
@@ -72,13 +72,14 @@
       <Variable x:TypeArguments="x:String" Default="[argOrgin]" Name="strOrgin" />
       <Variable x:TypeArguments="x:String" Default="[argDestination]" Name="strDestination" />
       <Variable x:TypeArguments="x:String" Default="[argGoogleApiKey]" Name="strGoogleAPIKey" />
+      <Variable x:TypeArguments="x:Int32" Name="igStatusCode" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:HttpClient Body="{x:Null}" ConsumerKey="{x:Null}" ConsumerSecret="{x:Null}" ContinueOnError="{x:Null}" OAuth1Token="{x:Null}" OAuth1TokenSecret="{x:Null}" OAuth2Token="{x:Null}" Password="{x:Null}" ResourcePath="{x:Null}" ResponseHeaders="{x:Null}" StatusCode="{x:Null}" Username="{x:Null}" AcceptFormat="XML" BodyFormat="application/xml" ClientCertificate="[Nothing]" ClientCertificatePassword="[Nothing]" DisplayName="HTTP Request for Google location API" EndPoint="[strGoogleMapEndpoint]" sap:VirtualizedContainerService.HintSize="314,22" sap2010:WorkflowViewState.IdRef="HttpClient_1" Method="GET" Result="[strXmlOutput]" TimeoutMS="6000">
+    <ui:HttpClient Body="{x:Null}" ConsumerKey="{x:Null}" ConsumerSecret="{x:Null}" ContinueOnError="{x:Null}" OAuth1Token="{x:Null}" OAuth1TokenSecret="{x:Null}" OAuth2Token="{x:Null}" Password="{x:Null}" ResourcePath="{x:Null}" ResponseHeaders="{x:Null}" Username="{x:Null}" AcceptFormat="XML" BodyFormat="application/xml" ClientCertificate="[Nothing]" ClientCertificatePassword="[Nothing]" DisplayName="HTTP Request for Google location API" EndPoint="[strGoogleMapEndpoint]" sap:VirtualizedContainerService.HintSize="571,22" sap2010:WorkflowViewState.IdRef="HttpClient_1" Method="GET" Result="[strXmlOutput]" StatusCode="[igStatusCode]" TimeoutMS="6000">
       <ui:HttpClient.Attachments>
         <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
       </ui:HttpClient.Attachments>
@@ -97,22 +98,36 @@
         <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
       </ui:HttpClient.UrlSegments>
     </ui:HttpClient>
-    <ui:DeserializeXml DisplayName="Deserialize XML from Google Location API response" sap:VirtualizedContainerService.HintSize="314,60" sap2010:WorkflowViewState.IdRef="DeserializeXml_1" XMLDocument="[xmlDocObject]" XMLString="[strXmlOutput]" />
-    <Assign DisplayName="GetTripDuration" sap:VirtualizedContainerService.HintSize="314,60" sap2010:WorkflowViewState.IdRef="Assign_1">
-      <Assign.To>
-        <OutArgument x:TypeArguments="x:String">[argDuration]</OutArgument>
-      </Assign.To>
-      <Assign.Value>
-        <InArgument x:TypeArguments="x:String">[xmlDocObject.Element("DirectionsResponse").Element("route").Element("leg").Element("duration").Element("text").Value]</InArgument>
-      </Assign.Value>
-    </Assign>
-    <Assign DisplayName="GetTripDistance" sap:VirtualizedContainerService.HintSize="314,60" sap2010:WorkflowViewState.IdRef="Assign_2">
-      <Assign.To>
-        <OutArgument x:TypeArguments="x:String">[argDistance]</OutArgument>
-      </Assign.To>
-      <Assign.Value>
-        <InArgument x:TypeArguments="x:String">[xmlDocObject.Element("DirectionsResponse").Element("route").Element("leg").Element("distance").Element("text").Value]</InArgument>
-      </Assign.Value>
-    </Assign>
+    <If Condition="[igStatusCode = 200 and strXmlOutput.Length&gt;0]" sap:VirtualizedContainerService.HintSize="571,532" sap2010:WorkflowViewState.IdRef="If_1">
+      <If.Then>
+        <Sequence sap:VirtualizedContainerService.HintSize="336,384" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <sap:WorkflowViewStateService.ViewState>
+            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            </scg:Dictionary>
+          </sap:WorkflowViewStateService.ViewState>
+          <ui:DeserializeXml DisplayName="Deserialize XML from Google Location API response" sap:VirtualizedContainerService.HintSize="314,60" sap2010:WorkflowViewState.IdRef="DeserializeXml_1" XMLDocument="[xmlDocObject]" XMLString="[strXmlOutput]" />
+          <Assign DisplayName="GetTripDuration" sap:VirtualizedContainerService.HintSize="314,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[argDuration]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">[xmlDocObject.Element("DirectionsResponse").Element("route").Element("leg").Element("duration").Element("text").Value]</InArgument>
+            </Assign.Value>
+          </Assign>
+          <Assign DisplayName="GetTripDistance" sap:VirtualizedContainerService.HintSize="314,60" sap2010:WorkflowViewState.IdRef="Assign_2">
+            <Assign.To>
+              <OutArgument x:TypeArguments="x:String">[argDistance]</OutArgument>
+            </Assign.To>
+            <Assign.Value>
+              <InArgument x:TypeArguments="x:String">[xmlDocObject.Element("DirectionsResponse").Element("route").Element("leg").Element("distance").Element("text").Value]</InArgument>
+            </Assign.Value>
+          </Assign>
+        </Sequence>
+      </If.Then>
+      <If.Else>
+        <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="210,61" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="google location requests failed" />
+      </If.Else>
+    </If>
   </Sequence>
 </Activity>

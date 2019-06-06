@@ -117,7 +117,7 @@
       </ui:HttpClient.UrlSegments>
     </ui:HttpClient>
     <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="820,61" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[&quot;Weather status code : &quot; +iStatusCode.ToString]" />
-    <If Condition="[iStatusCode =200]" DisplayName="If status is 200" sap:VirtualizedContainerService.HintSize="820,996" sap2010:WorkflowViewState.IdRef="If_7">
+    <If Condition="[iStatusCode =200 and strXML.Length&gt;0]" DisplayName="If status is 200" sap:VirtualizedContainerService.HintSize="820,996" sap2010:WorkflowViewState.IdRef="If_7">
       <If.Then>
         <Sequence sap:VirtualizedContainerService.HintSize="553,848" sap2010:WorkflowViewState.IdRef="Sequence_13">
           <sap:WorkflowViewStateService.ViewState>
