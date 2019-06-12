@@ -12,7 +12,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1322,3275</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1488,3275</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>GetGameDetails_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="21">
@@ -64,7 +64,7 @@
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="GetGameDetails" sap:VirtualizedContainerService.HintSize="1282,3195" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="GetGameDetails" sap:VirtualizedContainerService.HintSize="1448,3195" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="dtSchedule" />
       <Variable x:TypeArguments="s:DateTime" Name="dtimeExcelDate" />
@@ -77,28 +77,28 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[dtSchedule]" DisplayName="Read Range from schedule.xls" sap:VirtualizedContainerService.HintSize="1260,87" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="Sheet1" WorkbookPath="[environment.CurrentDirectory+&quot;\Data\Input\Schedule.xlsx&quot;]" />
-    <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[dtSchedule]" DisplayName="For Each Row in schedule" sap:VirtualizedContainerService.HintSize="1260,2853" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+    <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[dtSchedule]" DisplayName="Read Range from schedule.xls" sap:VirtualizedContainerService.HintSize="1426,87" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="Sheet1" WorkbookPath="[environment.CurrentDirectory+&quot;\Data\Input\Schedule.xlsx&quot;]" />
+    <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[dtSchedule]" DisplayName="For Each Row in schedule" sap:VirtualizedContainerService.HintSize="1426,2853" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
       <ui:ForEachRow.Body>
         <ActivityAction x:TypeArguments="sd:DataRow">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="sd:DataRow" Name="row" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="1230,2705" sap2010:WorkflowViewState.IdRef="Sequence_4">
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="1396,2705" sap2010:WorkflowViewState.IdRef="Sequence_4">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <If Condition="[row(&quot;Team 1&quot;).Equals(argTeamName) or row(&quot;Team 2&quot;).Equals(argTeamName)]" DisplayName="If team name exists in schedule.xlsx" sap:VirtualizedContainerService.HintSize="1208,2581" sap2010:WorkflowViewState.IdRef="If_2">
+            <If Condition="[row(&quot;Team 1&quot;).Equals(argTeamName) or row(&quot;Team 2&quot;).Equals(argTeamName)]" DisplayName="If team name exists in schedule.xlsx" sap:VirtualizedContainerService.HintSize="1374,2581" sap2010:WorkflowViewState.IdRef="If_2">
               <If.Then>
-                <Sequence sap:VirtualizedContainerService.HintSize="1083,2433" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                <Sequence sap:VirtualizedContainerService.HintSize="1249,2433" sap2010:WorkflowViewState.IdRef="Sequence_5">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <Assign DisplayName="Get match dates in schedule.xlsx for the team" sap:VirtualizedContainerService.HintSize="1061,60" sap2010:WorkflowViewState.IdRef="Assign_4">
+                  <Assign DisplayName="Get match dates in schedule.xlsx for the team" sap:VirtualizedContainerService.HintSize="1227,60" sap2010:WorkflowViewState.IdRef="Assign_4">
                     <Assign.To>
                       <OutArgument x:TypeArguments="s:DateTime">[dtimeExcelDate]</OutArgument>
                     </Assign.To>
@@ -106,15 +106,15 @@
                       <InArgument x:TypeArguments="s:DateTime">[cdate(row("Date"))]</InArgument>
                     </Assign.Value>
                   </Assign>
-                  <If Condition="[dtimeExcelDate &gt;= now.Date and boolFlag.Equals(True)]" DisplayName="If match date is later than now" sap:VirtualizedContainerService.HintSize="1061,2209" sap2010:WorkflowViewState.IdRef="If_3">
+                  <If Condition="[dtimeExcelDate &gt;= now.Date and boolFlag.Equals(True)]" DisplayName="If match date is later than now" sap:VirtualizedContainerService.HintSize="1227,2209" sap2010:WorkflowViewState.IdRef="If_3">
                     <If.Then>
-                      <Sequence DisplayName="Get details of the coming weekend game" sap:VirtualizedContainerService.HintSize="936,2061" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                      <Sequence DisplayName="Get details of the coming weekend game" sap:VirtualizedContainerService.HintSize="1102,2061" sap2010:WorkflowViewState.IdRef="Sequence_6">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <Assign sap:VirtualizedContainerService.HintSize="914,60" sap2010:WorkflowViewState.IdRef="Assign_13">
+                        <Assign sap:VirtualizedContainerService.HintSize="1080,60" sap2010:WorkflowViewState.IdRef="Assign_13">
                           <Assign.To>
                             <OutArgument x:TypeArguments="x:Double">[iDayDifference]</OutArgument>
                           </Assign.To>
@@ -122,15 +122,15 @@
                             <InArgument x:TypeArguments="x:Int32">[dtimeExcelDate.DayOfYear - datetime.Now.DayOfYear]</InArgument>
                           </Assign.Value>
                         </Assign>
-                        <If Condition="[iDayDifference &lt; 8]" DisplayName="If game is next weekend" sap:VirtualizedContainerService.HintSize="914,1436" sap2010:WorkflowViewState.IdRef="If_4">
+                        <If Condition="[iDayDifference &lt; 8]" DisplayName="If game is next weekend" sap:VirtualizedContainerService.HintSize="1080,1436" sap2010:WorkflowViewState.IdRef="If_4">
                           <If.Then>
-                            <Sequence sap:VirtualizedContainerService.HintSize="625,1288" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                            <Sequence sap:VirtualizedContainerService.HintSize="719,1288" sap2010:WorkflowViewState.IdRef="Sequence_8">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <Assign DisplayName="Assign match date" sap:VirtualizedContainerService.HintSize="603,60" sap2010:WorkflowViewState.IdRef="Assign_6">
+                              <Assign DisplayName="Assign match date" sap:VirtualizedContainerService.HintSize="697,60" sap2010:WorkflowViewState.IdRef="Assign_6">
                                 <Assign.To>
                                   <OutArgument x:TypeArguments="x:String">[argNextMatchDate]</OutArgument>
                                 </Assign.To>
@@ -138,7 +138,7 @@
                                   <InArgument x:TypeArguments="x:String">[dtimeExcelDate.ToString("yyyy-MM-dd")]</InArgument>
                                 </Assign.Value>
                               </Assign>
-                              <Assign DisplayName="Assign Team 1" sap:VirtualizedContainerService.HintSize="603,60" sap2010:WorkflowViewState.IdRef="Assign_8">
+                              <Assign DisplayName="Assign Team 1" sap:VirtualizedContainerService.HintSize="697,60" sap2010:WorkflowViewState.IdRef="Assign_8">
                                 <Assign.To>
                                   <OutArgument x:TypeArguments="x:String">[argTeam1]</OutArgument>
                                 </Assign.To>
@@ -146,7 +146,7 @@
                                   <InArgument x:TypeArguments="x:String">[row("Team 1").ToString]</InArgument>
                                 </Assign.Value>
                               </Assign>
-                              <Assign DisplayName="Assign Team 2" sap:VirtualizedContainerService.HintSize="603,60" sap2010:WorkflowViewState.IdRef="Assign_9">
+                              <Assign DisplayName="Assign Team 2" sap:VirtualizedContainerService.HintSize="697,60" sap2010:WorkflowViewState.IdRef="Assign_9">
                                 <Assign.To>
                                   <OutArgument x:TypeArguments="x:String">[argTeam2]</OutArgument>
                                 </Assign.To>
@@ -154,7 +154,7 @@
                                   <InArgument x:TypeArguments="x:String">[row("Team 2").ToString]</InArgument>
                                 </Assign.Value>
                               </Assign>
-                              <Assign DisplayName="Assign Venue name" sap:VirtualizedContainerService.HintSize="603,60" sap2010:WorkflowViewState.IdRef="Assign_10">
+                              <Assign DisplayName="Assign Venue name" sap:VirtualizedContainerService.HintSize="697,60" sap2010:WorkflowViewState.IdRef="Assign_10">
                                 <Assign.To>
                                   <OutArgument x:TypeArguments="x:String">[argVenue]</OutArgument>
                                 </Assign.To>
@@ -162,7 +162,7 @@
                                   <InArgument x:TypeArguments="x:String">[row("Venue").ToString]</InArgument>
                                 </Assign.Value>
                               </Assign>
-                              <Assign DisplayName="Assign start time" sap:VirtualizedContainerService.HintSize="603,60" sap2010:WorkflowViewState.IdRef="Assign_11">
+                              <Assign DisplayName="Assign start time" sap:VirtualizedContainerService.HintSize="697,60" sap2010:WorkflowViewState.IdRef="Assign_11">
                                 <Assign.To>
                                   <OutArgument x:TypeArguments="x:String">[argStartTime]</OutArgument>
                                 </Assign.To>
@@ -170,7 +170,7 @@
                                   <InArgument x:TypeArguments="x:String">[row("Start Time").ToString]</InArgument>
                                 </Assign.Value>
                               </Assign>
-                              <Assign DisplayName="Assign end time" sap:VirtualizedContainerService.HintSize="603,60" sap2010:WorkflowViewState.IdRef="Assign_12">
+                              <Assign DisplayName="Assign end time" sap:VirtualizedContainerService.HintSize="697,60" sap2010:WorkflowViewState.IdRef="Assign_12">
                                 <Assign.To>
                                   <OutArgument x:TypeArguments="x:String">[argEndTime]</OutArgument>
                                 </Assign.To>
@@ -178,7 +178,7 @@
                                   <InArgument x:TypeArguments="x:String">[row("End Time").ToString]</InArgument>
                                 </Assign.Value>
                               </Assign>
-                              <If Condition="[argTeam2.Equals(&quot;&quot;) or argNextMatchDate.Equals(&quot;&quot;)or argStartTime.Equals(&quot;&quot;)or argEndTime.Equals(&quot;&quot;) or argTeam1.Equals(&quot;&quot;) or argVenue.Equals(&quot;&quot;)]" DisplayName="If any mandatory values are missing in input file" sap:VirtualizedContainerService.HintSize="603,564" sap2010:WorkflowViewState.IdRef="If_5">
+                              <If Condition="[argTeam2.Equals(&quot;&quot;) or argNextMatchDate.Equals(&quot;&quot;)or argStartTime.Equals(&quot;&quot;)or argEndTime.Equals(&quot;&quot;) or argTeam1.Equals(&quot;&quot;) or argVenue.Equals(&quot;&quot;)]" DisplayName="If any mandatory values are missing in input file" sap:VirtualizedContainerService.HintSize="697,564" sap2010:WorkflowViewState.IdRef="If_5">
                                 <If.Then>
                                   <Sequence sap:VirtualizedContainerService.HintSize="336,416" sap2010:WorkflowViewState.IdRef="Sequence_10">
                                     <sap:WorkflowViewStateService.ViewState>
@@ -199,26 +199,34 @@
                                   </Sequence>
                                 </If.Then>
                                 <If.Else>
-                                  <Assign sap:VirtualizedContainerService.HintSize="242,60" sap2010:WorkflowViewState.IdRef="Assign_14">
-                                    <Assign.To>
-                                      <OutArgument x:TypeArguments="x:Boolean">[argGame]</OutArgument>
-                                    </Assign.To>
-                                    <Assign.Value>
-                                      <InArgument x:TypeArguments="x:Boolean">True</InArgument>
-                                    </Assign.Value>
-                                  </Assign>
+                                  <Sequence sap:VirtualizedContainerService.HintSize="336,315" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <Assign sap:VirtualizedContainerService.HintSize="314,60" sap2010:WorkflowViewState.IdRef="Assign_14">
+                                      <Assign.To>
+                                        <OutArgument x:TypeArguments="x:Boolean">[argGame]</OutArgument>
+                                      </Assign.To>
+                                      <Assign.Value>
+                                        <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                                      </Assign.Value>
+                                    </Assign>
+                                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="314,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;All mandatory game information are present for this game&quot;]" />
+                                  </Sequence>
                                 </If.Else>
                               </If>
                             </Sequence>
                           </If.Then>
                           <If.Else>
-                            <Sequence sap:VirtualizedContainerService.HintSize="264,184" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                            <Sequence sap:VirtualizedContainerService.HintSize="336,416" sap2010:WorkflowViewState.IdRef="Sequence_9">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <Assign sap:VirtualizedContainerService.HintSize="242,60" sap2010:WorkflowViewState.IdRef="Assign_15">
+                              <Assign sap:VirtualizedContainerService.HintSize="314,60" sap2010:WorkflowViewState.IdRef="Assign_15">
                                 <Assign.To>
                                   <OutArgument x:TypeArguments="x:Boolean">[argGame]</OutArgument>
                                 </Assign.To>
@@ -226,6 +234,8 @@
                                   <InArgument x:TypeArguments="x:Boolean">False</InArgument>
                                 </Assign.Value>
                               </Assign>
+                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="314,91" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;No game for this team this weekend. So end process&quot;]" />
+                              <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="314,61" sap2010:WorkflowViewState.IdRef="WriteLine_2" Text="No game for this team this weekend. So end process" />
                             </Sequence>
                           </If.Else>
                         </If>
