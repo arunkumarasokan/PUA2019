@@ -180,7 +180,7 @@
                               </Assign>
                               <If Condition="[argTeam2.Equals(&quot;&quot;) or argNextMatchDate.Equals(&quot;&quot;)or argStartTime.Equals(&quot;&quot;)or argEndTime.Equals(&quot;&quot;) or argTeam1.Equals(&quot;&quot;) or argVenue.Equals(&quot;&quot;)]" DisplayName="If any mandatory values are missing in input file" sap:VirtualizedContainerService.HintSize="697,564" sap2010:WorkflowViewState.IdRef="If_5">
                                 <If.Then>
-                                  <Sequence sap:VirtualizedContainerService.HintSize="336,416" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                                  <Sequence DisplayName="Mandatory info missing Sequence" sap:VirtualizedContainerService.HintSize="336,416" sap2010:WorkflowViewState.IdRef="Sequence_10">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -199,7 +199,7 @@
                                   </Sequence>
                                 </If.Then>
                                 <If.Else>
-                                  <Sequence sap:VirtualizedContainerService.HintSize="336,315" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                                  <Sequence DisplayName="Mandatory info present Sequence" sap:VirtualizedContainerService.HintSize="336,315" sap2010:WorkflowViewState.IdRef="Sequence_11">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -220,7 +220,7 @@
                             </Sequence>
                           </If.Then>
                           <If.Else>
-                            <Sequence sap:VirtualizedContainerService.HintSize="336,416" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                            <Sequence DisplayName="No weekend game Sequence" sap:VirtualizedContainerService.HintSize="336,416" sap2010:WorkflowViewState.IdRef="Sequence_9">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>

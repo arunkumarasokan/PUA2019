@@ -117,9 +117,9 @@
       </ui:HttpClient.UrlSegments>
     </ui:HttpClient>
     <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="1080,61" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[&quot;Weather status code : &quot; +iStatusCode.ToString]" />
-    <If Condition="[iStatusCode =200 and strXML.Length&gt;0]" DisplayName="If status is 200" sap:VirtualizedContainerService.HintSize="1080,1127" sap2010:WorkflowViewState.IdRef="If_7">
+    <If Condition="[iStatusCode =200 and strXML.Length&gt;0]" DisplayName="Check If status is 200" sap:VirtualizedContainerService.HintSize="1080,1127" sap2010:WorkflowViewState.IdRef="If_7">
       <If.Then>
-        <Sequence sap:VirtualizedContainerService.HintSize="719,979" sap2010:WorkflowViewState.IdRef="Sequence_13">
+        <Sequence DisplayName="Status 200 Sequence" sap:VirtualizedContainerService.HintSize="719,979" sap2010:WorkflowViewState.IdRef="Sequence_13">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -564,7 +564,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <If.Then>
-              <Sequence sap:VirtualizedContainerService.HintSize="336,416" sap2010:WorkflowViewState.IdRef="Sequence_12">
+              <Sequence DisplayName="Weather details not available Sequence" sap:VirtualizedContainerService.HintSize="336,416" sap2010:WorkflowViewState.IdRef="Sequence_12">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -583,7 +583,7 @@
               </Sequence>
             </If.Then>
             <If.Else>
-              <Sequence sap:VirtualizedContainerService.HintSize="336,315" sap2010:WorkflowViewState.IdRef="Sequence_15">
+              <Sequence DisplayName="Weather details available Sequence" sap:VirtualizedContainerService.HintSize="336,315" sap2010:WorkflowViewState.IdRef="Sequence_15">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -604,7 +604,7 @@
         </Sequence>
       </If.Then>
       <If.Else>
-        <Sequence sap:VirtualizedContainerService.HintSize="336,315" sap2010:WorkflowViewState.IdRef="Sequence_14">
+        <Sequence DisplayName="Weather API Error Sequence" sap:VirtualizedContainerService.HintSize="336,315" sap2010:WorkflowViewState.IdRef="Sequence_14">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
