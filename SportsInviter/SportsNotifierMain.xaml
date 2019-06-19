@@ -12,7 +12,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>2552,8048</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>2552,8084</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="25">
@@ -75,7 +75,7 @@
       <x:Boolean x:Key="ShouldExpandAll">True</x:Boolean>
     </scg:Dictionary>
   </sap:WorkflowViewStateService.ViewState>
-  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="2512,7968" sap2010:WorkflowViewState.IdRef="Sequence_14">
+  <Sequence DisplayName="Main Sequence" sap:VirtualizedContainerService.HintSize="2512,8004" sap2010:WorkflowViewState.IdRef="Sequence_14">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Default="[argTeamName]" Name="strTeamName" />
       <Variable x:TypeArguments="x:Boolean" Name="boolScheduleExists" />
@@ -609,7 +609,7 @@
                                                 <OutArgument x:TypeArguments="x:String">[argInviteSent]</OutArgument>
                                               </Assign.To>
                                               <Assign.Value>
-                                                <InArgument x:TypeArguments="x:String">Sucess! Calendar Invite Sent</InArgument>
+                                                <InArgument x:TypeArguments="x:String">Success! Calendar Invite Sent</InArgument>
                                               </Assign.Value>
                                             </Assign>
                                           </If.Else>
