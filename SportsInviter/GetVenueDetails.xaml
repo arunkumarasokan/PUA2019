@@ -9,7 +9,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>770,1383</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>770,1535</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>GetVenueDetails_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="21">
@@ -61,7 +61,7 @@
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="GetVenueDetails" sap:VirtualizedContainerService.HintSize="730,1303" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="GetVenueDetails" sap:VirtualizedContainerService.HintSize="730,1455" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="dtVenue" />
     </Sequence.Variables>
@@ -70,6 +70,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
+    <ui:Comment sap:VirtualizedContainerService.HintSize="708,112" sap2010:WorkflowViewState.IdRef="Comment_1" Text="// &#xA;• Input: Venue name&#xA;• Steps: Use the venue name and find the venue address from Venues.xlsx&#xA;• Output: address, zip &amp; google map link&#xA;&#xA;" />
     <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[dtVenue]" DisplayName="Read Range from VenueDetails.xlsx" sap:VirtualizedContainerService.HintSize="708,87" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="Sheet1" WorkbookPath="[environment.CurrentDirectory+&quot;\Data\Input\VenueDetails.xlsx&quot;]" />
     <ui:ForEachRow CurrentIndex="{x:Null}" DataTable="[dtVenue]" DisplayName="For Each Row in venue data table" sap:VirtualizedContainerService.HintSize="708,1052" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
       <ui:ForEachRow.Body>

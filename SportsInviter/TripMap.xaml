@@ -10,7 +10,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>759,798</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>759,988</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>TripMap_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="22">
@@ -39,7 +39,7 @@
     </scg:List>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
-    <scg:List x:TypeArguments="AssemblyReference" Capacity="22">
+    <scg:List x:TypeArguments="AssemblyReference" Capacity="44">
       <AssemblyReference>System.Activities</AssemblyReference>
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
@@ -62,9 +62,10 @@
       <AssemblyReference>UiPath.Mail</AssemblyReference>
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
       <AssemblyReference>Newtonsoft.Json</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="TripMap" sap:VirtualizedContainerService.HintSize="719,718" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="TripMap" sap:VirtualizedContainerService.HintSize="719,908" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="strXmlOutput" />
       <Variable x:TypeArguments="sxl:XDocument" Name="xmlDocObject" />
@@ -79,6 +80,7 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
+    <ui:Comment sap:VirtualizedContainerService.HintSize="697,150" sap2010:WorkflowViewState.IdRef="Comment_1" Text="// &#xA;• Input:  Origin address , destination address, Google API key, Google Location API endpoint&#xA;• Steps: Google Location API will calculate the distance and duration based on the origin and destination addresses&#xA;• Output: Distance and Duration&#xA;" />
     <ui:HttpClient Body="{x:Null}" ConsumerKey="{x:Null}" ConsumerSecret="{x:Null}" ContinueOnError="{x:Null}" OAuth1Token="{x:Null}" OAuth1TokenSecret="{x:Null}" OAuth2Token="{x:Null}" Password="{x:Null}" ResourcePath="{x:Null}" ResponseHeaders="{x:Null}" Username="{x:Null}" AcceptFormat="XML" BodyFormat="application/xml" ClientCertificate="[Nothing]" ClientCertificatePassword="[Nothing]" DisplayName="HTTP Request for Google location API" EndPoint="[strGoogleMapEndpoint]" sap:VirtualizedContainerService.HintSize="697,22" sap2010:WorkflowViewState.IdRef="HttpClient_1" Method="GET" Result="[strXmlOutput]" StatusCode="[igStatusCode]" TimeoutMS="6000">
       <ui:HttpClient.Attachments>
         <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />

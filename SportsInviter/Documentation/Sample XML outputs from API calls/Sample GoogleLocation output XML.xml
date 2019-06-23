@@ -1,0 +1,480 @@
+﻿<DirectionsResponse>
+  <status>OK</status>
+  <route>
+    <summary>Sam Rayburn Tollway</summary>
+    <leg>
+      <step>
+        <travel_mode>DRIVING</travel_mode>
+        <start_location>
+          <lat>32.8968654</lat>
+          <lng>-96.9427681</lng>
+        </start_location>
+        <end_location>
+          <lat>32.8958310</lat>
+          <lng>-96.9427761</lng>
+        </end_location>
+        <polyline>
+          <points>mdxgEhcunQnE@</points>
+        </polyline>
+        <duration>
+          <value>17</value>
+          <text>1 min</text>
+        </duration>
+        <html_instructions>Head &lt;b&gt;south&lt;/b&gt; on &lt;b&gt;Escena Blvd&lt;/b&gt; toward &lt;b&gt;E Royal Ln&lt;/b&gt;</html_instructions>
+        <distance>
+          <value>115</value>
+          <text>377 ft</text>
+        </distance>
+      </step>
+      <step>
+        <travel_mode>DRIVING</travel_mode>
+        <start_location>
+          <lat>32.8958310</lat>
+          <lng>-96.9427761</lng>
+        </start_location>
+        <end_location>
+          <lat>32.8958163</lat>
+          <lng>-96.9448657</lng>
+        </end_location>
+        <polyline>
+          <points>}}wgEjcunQ@hD@|A?z@A|A</points>
+        </polyline>
+        <duration>
+          <value>21</value>
+          <text>1 min</text>
+        </duration>
+        <html_instructions>Turn &lt;b&gt;right&lt;/b&gt; onto &lt;b&gt;E Royal Ln&lt;/b&gt;</html_instructions>
+        <distance>
+          <value>195</value>
+          <text>0.1 mi</text>
+        </distance>
+        <maneuver>turn-right</maneuver>
+      </step>
+      <step>
+        <travel_mode>DRIVING</travel_mode>
+        <start_location>
+          <lat>32.8958163</lat>
+          <lng>-96.9448657</lng>
+        </start_location>
+        <end_location>
+          <lat>32.9018856</lat>
+          <lng>-96.9453271</lng>
+        </end_location>
+        <polyline>
+          <points>{}wgElpunQMVINEFEBIFQJaDBmD@{A@kBBoCAmD@gA@_FD</points>
+        </polyline>
+        <duration>
+          <value>48</value>
+          <text>1 min</text>
+        </duration>
+        <html_instructions>Turn &lt;b&gt;right&lt;/b&gt; onto &lt;b&gt;Colwell Blvd&lt;/b&gt;</html_instructions>
+        <distance>
+          <value>689</value>
+          <text>0.4 mi</text>
+        </distance>
+        <maneuver>turn-right</maneuver>
+      </step>
+      <step>
+        <travel_mode>DRIVING</travel_mode>
+        <start_location>
+          <lat>32.9018856</lat>
+          <lng>-96.9453271</lng>
+        </start_location>
+        <end_location>
+          <lat>32.9052323</lat>
+          <lng>-96.9508031</lng>
+        </end_location>
+        <polyline>
+          <points>ycygEhsunQsA?]?ETSx@Oj@Qh@MXQ`@IPOXEFYb@ILUXo@t@KJOPILIHo@v@aAjAg@j@ILOVWh@O^GRCN[|AIx@E~@?p@?h@</points>
+        </polyline>
+        <duration>
+          <value>55</value>
+          <text>1 min</text>
+        </duration>
+        <html_instructions>Turn &lt;b&gt;left&lt;/b&gt; onto &lt;b&gt;W La Villita Blvd&lt;/b&gt;</html_instructions>
+        <distance>
+          <value>682</value>
+          <text>0.4 mi</text>
+        </distance>
+        <maneuver>turn-left</maneuver>
+      </step>
+      <step>
+        <travel_mode>DRIVING</travel_mode>
+        <start_location>
+          <lat>32.9052323</lat>
+          <lng>-96.9508031</lng>
+        </start_location>
+        <end_location>
+          <lat>32.9076969</lat>
+          <lng>-96.9520538</lng>
+        </end_location>
+        <polyline>
+          <points>uxygEnuvnQcBJm@H_@H[Hq@Tu@X]PGFUJa@\g@d@c@d@MN</points>
+        </polyline>
+        <duration>
+          <value>31</value>
+          <text>1 min</text>
+        </duration>
+        <html_instructions>Turn &lt;b&gt;right&lt;/b&gt; onto &lt;b&gt;Las Colinas Blvd&lt;/b&gt;</html_instructions>
+        <distance>
+          <value>306</value>
+          <text>0.2 mi</text>
+        </distance>
+        <maneuver>turn-right</maneuver>
+      </step>
+      <step>
+        <travel_mode>DRIVING</travel_mode>
+        <start_location>
+          <lat>32.9076969</lat>
+          <lng>-96.9520538</lng>
+        </start_location>
+        <end_location>
+          <lat>32.9088264</lat>
+          <lng>-96.9503048</lng>
+        </end_location>
+        <polyline>
+          <points>chzgEh}vnQOHMFKBI@I?ICSMM]c@sA?Aa@yAU_AESUaA</points>
+        </polyline>
+        <duration>
+          <value>24</value>
+          <text>1 min</text>
+        </duration>
+        <html_instructions>Turn &lt;b&gt;right&lt;/b&gt; onto &lt;b&gt;State Hwy 161 N&lt;/b&gt;</html_instructions>
+        <distance>
+          <value>237</value>
+          <text>0.1 mi</text>
+        </distance>
+        <maneuver>turn-right</maneuver>
+      </step>
+      <step>
+        <travel_mode>DRIVING</travel_mode>
+        <start_location>
+          <lat>32.9088264</lat>
+          <lng>-96.9503048</lng>
+        </start_location>
+        <end_location>
+          <lat>32.9754209</lat>
+          <lng>-96.9330886</lng>
+        </end_location>
+        <polyline>
+          <points>eozgEjrvnQOOAA?CEMEMGSQq@I[Ss@Su@Y{@Y_AQo@m@eBQi@Oa@M_@K]GMWs@IWQc@[_ACE_@cAOg@CEAC?AIWACAEIYCICGGUIUM_@K]Yy@AAA?AAA?A?A?C@[sA_@wA]oAYgAOq@YgAGWIYGWQq@IYGWc@aBG[Og@Oi@Qs@Sm@GS]kAGSIQKWEMCISc@]y@Si@q@sAg@}@MUYc@m@{@m@{@m@w@m@q@s@u@OOQOYWEEQOQQOOQOa@[e@]c@[UOUO_@We@Ye@Ye@WUMSKSKg@Ug@Si@QWIa@MWKg@Oa@IgA[SEwBg@eAUcAU{Bg@o@MWGuB_@_Ci@_@Ia@KiCm@k@M{@U[IyA[UCs@Me@GmAQGAc@Ec@EoAIoAIyAGc@CMA{AGc@AkBGc@C_@AqBIYCc@AaAEMAI?YAiBIk@C[Ac@AyGYkCMgAIG?yCIYA]AI?_@?uCCaBAiA?eAAc@AsDC}AAiB?kAA_BIUASAOCi@E}@MkAS_@GiAWe@Ko@QAAw@Uy@[q@Ue@SqCoAq@]mCsAqCwA_@Se@U_EqBq@[q@]q@Ws@Ws@WeAWi@KA?A?e@IGCsAQOCiAGiAGo@AO?MA[?E?O?a@@iADcAHk@Fk@Hu@Le@Hg@LmAZs@TA?MD[LE@_A`@y@`@iAl@cAn@YRg@b@_BvAKHsAlA[ZWTu@p@GDsGrFwAnAg@`@g@`@SLUNi@\m@Zk@Zs@Zo@ZYJo@To@TuBn@gAZ{@RiARgAPgAJgAJmBHmABkA@iCGcBGcBEcACA?[AUAC?UAA?o@AuEOc@AeAC{@C{@AY?a@?{@@sADiAHK@cAJaALcAPcAPeCb@u@NK@w@N</points>
+        </polyline>
+        <duration>
+          <value>279</value>
+          <text>5 mins</text>
+        </duration>
+        <html_instructions>Take the ramp on the &lt;b&gt;left&lt;/b&gt; onto &lt;b&gt;President George Bush Turnpike N&lt;/b&gt;&lt;div style="font-size:0.9em"&gt;Partial toll road&lt;/div&gt;</html_instructions>
+        <distance>
+          <value>8586</value>
+          <text>5.3 mi</text>
+        </distance>
+        <maneuver>ramp-left</maneuver>
+      </step>
+      <step>
+        <travel_mode>DRIVING</travel_mode>
+        <start_location>
+          <lat>32.9754209</lat>
+          <lng>-96.9330886</lng>
+        </start_location>
+        <end_location>
+          <lat>32.9785848</lat>
+          <lng>-96.9331204</lng>
+        </end_location>
+        <polyline>
+          <points>koghExfsnQOEIAI?I?mALuBRE@gAJc@BU@o@?e@AIAa@C]Ce@Ea@KUI</points>
+        </polyline>
+        <duration>
+          <value>13</value>
+          <text>1 min</text>
+        </duration>
+        <html_instructions>Take the exit toward &lt;b&gt;TX-121&lt;/b&gt;/&lt;b&gt;Sam Rayburn Tollway&lt;/b&gt;&lt;div style="font-size:0.9em"&gt;Toll road&lt;/div&gt;</html_instructions>
+        <distance>
+          <value>356</value>
+          <text>0.2 mi</text>
+        </distance>
+        <maneuver>ramp-right</maneuver>
+      </step>
+      <step>
+        <travel_mode>DRIVING</travel_mode>
+        <start_location>
+          <lat>32.9785848</lat>
+          <lng>-96.9331204</lng>
+        </start_location>
+        <end_location>
+          <lat>32.9951601</lat>
+          <lng>-96.9504042</lng>
+        </end_location>
+        <polyline>
+          <points>cchhE~fsnQc@E_@K[Mc@OECA?_@S]QIGSMMIUOCCu@m@y@w@_@][Yq@o@_@[a@WIEAACASISIOEAASE?AA?KAAAIAA?A?QEMAA?YEm@?Q?G?C@G?O@OB[BYFOFODWJSHSLc@ZSPEDIH_@^UZa@h@w@jA[b@_@h@kA~A{A|Ba@j@w@vAW`@e@|@m@jAUb@ABQ^iAbCWn@eAbCaAzBM\}@bCCBQb@{@lBeA`C}AtCyCvFmAdCCHS`@eAxB_@v@cBjDs@zAe@nAc@hA[x@k@jAqBhEoAlCg@fAKXMXy@lBCDwAfD</points>
+        </polyline>
+        <duration>
+          <value>106</value>
+          <text>2 mins</text>
+        </duration>
+        <html_instructions>Keep &lt;b&gt;left&lt;/b&gt; at the fork, follow signs for &lt;b&gt;I-35E N&lt;/b&gt;/&lt;b&gt;Denton N&lt;/b&gt;&lt;div style="font-size:0.9em"&gt;Toll road&lt;/div&gt;</html_instructions>
+        <distance>
+          <value>2843</value>
+          <text>1.8 mi</text>
+        </distance>
+        <maneuver>fork-left</maneuver>
+      </step>
+      <step>
+        <travel_mode>DRIVING</travel_mode>
+        <start_location>
+          <lat>32.9951601</lat>
+          <lng>-96.9504042</lng>
+        </start_location>
+        <end_location>
+          <lat>32.9974771</lat>
+          <lng>-96.9542981</lng>
+        </end_location>
+        <polyline>
+          <points>wjkhE~rvnQWh@q@xAa@r@QXWb@{@~ACBU`@S^?@Ub@Yh@MZSb@a@z@{@jB_@v@</points>
+        </polyline>
+        <duration>
+          <value>17</value>
+          <text>1 min</text>
+        </duration>
+        <html_instructions>Keep &lt;b&gt;right&lt;/b&gt; to continue on &lt;b&gt;Exit 447A&lt;/b&gt;, follow signs for &lt;b&gt;Sam Rayburn Tollway N&lt;/b&gt;&lt;div style="font-size:0.9em"&gt;Toll road&lt;/div&gt;</html_instructions>
+        <distance>
+          <value>445</value>
+          <text>0.3 mi</text>
+        </distance>
+        <maneuver>keep-right</maneuver>
+      </step>
+      <step>
+        <travel_mode>DRIVING</travel_mode>
+        <start_location>
+          <lat>32.9974771</lat>
+          <lng>-96.9542981</lng>
+        </start_location>
+        <end_location>
+          <lat>33.0179102</lat>
+          <lng>-96.9372864</lng>
+        </end_location>
+        <polyline>
+          <points>gykhEjkwnQ}A|Ck@dAa@h@QPMNMJYRC@CBYPGDWLmAZk@Hg@Di@Aa@AIASCOCA?aAYa@OAA]QUO_@[uBwBo@s@w@w@[YIIkAqACCg@s@s@cAm@y@GGEG}AsBgAuAcAkAqCiDIGOUw@aAKEO?mByCqJ_NiD}EMQoEgGACsCoDCEwAgB?ACCOQCCCEcBwBuCsDcAsAkB_C_AcASUkD_DsAkA]YEEiA{@eAs@]U_@UkD{B</points>
+        </polyline>
+        <duration>
+          <value>108</value>
+          <text>2 mins</text>
+        </duration>
+        <html_instructions>Keep &lt;b&gt;right&lt;/b&gt; at the fork, follow signs for &lt;b&gt;McKinney&lt;/b&gt; and merge onto &lt;b&gt;TX-121&lt;/b&gt;/&lt;b&gt;Sam Rayburn Tollway&lt;/b&gt;&lt;div style="font-size:0.9em"&gt;Toll road&lt;/div&gt;</html_instructions>
+        <distance>
+          <value>3062</value>
+          <text>1.9 mi</text>
+        </distance>
+        <maneuver>fork-right</maneuver>
+      </step>
+      <step>
+        <travel_mode>DRIVING</travel_mode>
+        <start_location>
+          <lat>33.0179102</lat>
+          <lng>-96.9372864</lng>
+        </start_location>
+        <end_location>
+          <lat>33.1129221</lat>
+          <lng>-96.7660592</lng>
+        </end_location>
+        <polyline>
+          <points>}xohE`atnQkDyBcBeAWQ{AaA_@U{BwAiFgDWOSKYSGEQMSMmD{B_As@oD}BqJeG}@k@{AaAmOuJy@g@}CsB{P}KeCaByByAkBmAMI_@WKGWQ_Am@m@]{@k@g@W[Q{@_@cBk@uA_@kAScAOo@Ik@G]AWAYAE?w@Cc@@yA@cBBkEFuBBeDDiA?sAC}@EaAGk@Ei@G[Ew@KUE]GUEGAKC]GCAMCWG}Ac@YIgC_AA?iCqAqBiAcAs@[UYU[Ws@o@k@g@_AaAA?QUY]]a@[a@A?OUMQMSQUMSAAi@{@e@y@e@{@MYSc@Q[Yq@g@sAWo@Uo@GSEQoBqFk@eBiAmD_@gAy@cCgAcDi@{AOc@iBkFwBgGiAaDoAqDiDqJ{CqIQe@cAuCc@qAYy@EKCKSk@M[o@kBs@qBQe@gBaFgCmHwBgGuA{Ds@qBeAyCuBgGSk@o@gBeAwC]_A]aAg@wAa@kAKWAEM]Qc@m@gBMc@Sq@a@}@s@sBqG{Q}@gCg@yAUo@Wm@q@gBg@qA]y@c@cAu@oBSc@m@{Ay@uBe@wA}AcEeB{EM[CKGOEMMa@A?oAqDkBkFk@aB{AkEgBcFwBgGiDwJQe@u@wBM_@Qc@Ws@{AiE]kAgDmJc@qAk@aBq@mBQc@c@kA_CwGEKqAsDMa@Qe@s@sBeBaFc@mAi@aBY}@iBmFCGIUACcAsCM]i@cBGOc@yA?AAAK]?AK[ACAC?AIWACm@sBu@kCk@oBYiAOs@[qAe@qBIYYwAYuAG_@CI_@gBq@sDSiAc@aCKg@gAeGuAyHYyA_AmF[gBEUESIa@?CAEG[Ic@AEAGEWY_Bw@}Dw@kEy@gEOy@m@eD_@{BG]AIy@kEKk@s@uDIg@eBoJs@uDg@wCeBmJiAyFKi@Ic@CSWwAGYSaAG]UoAGc@Mg@Mu@]kB?CIe@}@kFq@kDq@iDAIi@}CY}Aw@kEUkAUiACUAAG]?AIi@AAEWG[Ow@S_AI]Kc@GSW_AOi@Kc@o@sBAGsB_Gi@{AoAkDYu@cAsC]eAQg@K[So@Qg@Sq@EOCEAGAGQs@K[EKCKK]Y}@?CIQCIESSq@AA?CGUA??AKa@i@cBg@eB{A_FiD_LOe@}@qC}B}Hc@uAMa@c@yAgBaGsDwLIW{AgFoDsL_AaDWu@Uu@Ka@A?Ka@AEK]ACK_@A?q@}BAGwEuOm@mB}@uCMc@Ww@Mc@[aASq@eBsFiBgGmBoGkEuNiEuNo@sBOg@}@yCOi@Qe@KYMa@i@gBg@aBmA_E}@{COg@u@kCcAgDc@wA</points>
+        </polyline>
+        <duration>
+          <value>650</value>
+          <text>11 mins</text>
+        </duration>
+        <html_instructions>Continue onto &lt;b&gt;Sam Rayburn Tollway&lt;/b&gt;&lt;div style="font-size:0.9em"&gt;Toll road&lt;/div&gt;</html_instructions>
+        <distance>
+          <value>20047</value>
+          <text>12.5 mi</text>
+        </distance>
+      </step>
+      <step>
+        <travel_mode>DRIVING</travel_mode>
+        <start_location>
+          <lat>33.1129221</lat>
+          <lng>-96.7660592</lng>
+        </start_location>
+        <end_location>
+          <lat>33.1143279</lat>
+          <lng>-96.7618312</lng>
+        </end_location>
+        <polyline>
+          <points>wjbiEzrrmQ@a@?AACi@uBSw@aAsDs@kCYiAU{@Qu@W_AEUEM?G?G?G</points>
+        </polyline>
+        <duration>
+          <value>16</value>
+          <text>1 min</text>
+        </duration>
+        <html_instructions>Take the exit toward &lt;b&gt;Independence Pkwy&lt;/b&gt;&lt;div style="font-size:0.9em"&gt;Toll road&lt;/div&gt;</html_instructions>
+        <distance>
+          <value>426</value>
+          <text>0.3 mi</text>
+        </distance>
+        <maneuver>ramp-right</maneuver>
+      </step>
+      <step>
+        <travel_mode>DRIVING</travel_mode>
+        <start_location>
+          <lat>33.1143279</lat>
+          <lng>-96.7618312</lng>
+        </start_location>
+        <end_location>
+          <lat>33.1151852</lat>
+          <lng>-96.7595813</lng>
+        </end_location>
+        <polyline>
+          <points>qsbiElxqmQmAcEMi@oAsE</points>
+        </polyline>
+        <duration>
+          <value>9</value>
+          <text>1 min</text>
+        </duration>
+        <html_instructions>Merge onto &lt;b&gt;TX-121 N&lt;/b&gt;</html_instructions>
+        <distance>
+          <value>230</value>
+          <text>0.1 mi</text>
+        </distance>
+        <maneuver>merge</maneuver>
+      </step>
+      <step>
+        <travel_mode>DRIVING</travel_mode>
+        <start_location>
+          <lat>33.1151852</lat>
+          <lng>-96.7595813</lng>
+        </start_location>
+        <end_location>
+          <lat>33.1087364</lat>
+          <lng>-96.7587159</lng>
+        </end_location>
+        <polyline>
+          <points>}xbiEjjqmQ`@Mh@QPCR?~A?b@@b@?jB?fA@jB?R?PBN@TFTHVL\PTJTHTDRDR@N?P?NAPAPCNEPGlBaA~CcBfAk@</points>
+        </polyline>
+        <duration>
+          <value>64</value>
+          <text>1 min</text>
+        </duration>
+        <html_instructions>Turn &lt;b&gt;right&lt;/b&gt; onto &lt;b&gt;Gillespie Dr&lt;/b&gt;</html_instructions>
+        <distance>
+          <value>753</value>
+          <text>0.5 mi</text>
+        </distance>
+        <maneuver>turn-right</maneuver>
+      </step>
+      <step>
+        <travel_mode>DRIVING</travel_mode>
+        <start_location>
+          <lat>33.1087364</lat>
+          <lng>-96.7587159</lng>
+        </start_location>
+        <end_location>
+          <lat>33.1082883</lat>
+          <lng>-96.7597434</lng>
+        </end_location>
+        <polyline>
+          <points>spaiE~dqmQ~@nCXz@</points>
+        </polyline>
+        <duration>
+          <value>11</value>
+          <text>1 min</text>
+        </duration>
+        <html_instructions>Turn &lt;b&gt;right&lt;/b&gt; onto &lt;b&gt;Ridgeview Dr&lt;/b&gt;</html_instructions>
+        <distance>
+          <value>108</value>
+          <text>354 ft</text>
+        </distance>
+        <maneuver>turn-right</maneuver>
+      </step>
+      <step>
+        <travel_mode>DRIVING</travel_mode>
+        <start_location>
+          <lat>33.1082883</lat>
+          <lng>-96.7597434</lng>
+        </start_location>
+        <end_location>
+          <lat>33.0979252</lat>
+          <lng>-96.7592278</lng>
+        </end_location>
+        <polyline>
+          <points>ymaiEjkqmQVMr@UXGHAJAL?L@~AAdBAtA?pA@lA?pA?pA?r@?Z@pA?pA?lA?pA@h@Af@@pA@dBC\@X@L?RAFAFALELGRSHGFGHCJEREN?R?zB@T@p@?vCDj@@</points>
+        </polyline>
+        <duration>
+          <value>158</value>
+          <text>3 mins</text>
+        </duration>
+        <html_instructions>Turn &lt;b&gt;left&lt;/b&gt; onto &lt;b&gt;Gillespie Dr&lt;/b&gt;</html_instructions>
+        <distance>
+          <value>1165</value>
+          <text>0.7 mi</text>
+        </distance>
+        <maneuver>turn-left</maneuver>
+      </step>
+      <step>
+        <travel_mode>DRIVING</travel_mode>
+        <start_location>
+          <lat>33.0979252</lat>
+          <lng>-96.7592278</lng>
+        </start_location>
+        <end_location>
+          <lat>33.0979294</lat>
+          <lng>-96.7593614</lng>
+        </end_location>
+        <polyline>
+          <points>am_iEdhqmQ?X</points>
+        </polyline>
+        <duration>
+          <value>5</value>
+          <text>1 min</text>
+        </duration>
+        <html_instructions>Turn &lt;b&gt;right&lt;/b&gt;</html_instructions>
+        <distance>
+          <value>12</value>
+          <text>39 ft</text>
+        </distance>
+        <maneuver>turn-right</maneuver>
+      </step>
+      <duration>
+        <value>1632</value>
+        <text>27 mins</text>
+      </duration>
+      <distance>
+        <value>40257</value>
+        <text>25.0 mi</text>
+      </distance>
+      <start_location>
+        <lat>32.8968654</lat>
+        <lng>-96.9427681</lng>
+      </start_location>
+      <end_location>
+        <lat>33.0979294</lat>
+        <lng>-96.7593614</lng>
+      </end_location>
+      <start_address>6415 Escena Blvd, Irving, TX 75039, USA</start_address>
+      <end_address>3500 McDermott Rd, Plano, TX 75025, USA</end_address>
+    </leg>
+    <copyrights>Map data ©2019</copyrights>
+    <overview_polyline>
+      <points>mdxgEhcunQnE@@hD@xCA|AMVOVOJQJaDBiGB{F@iPH]?ETc@dB{@vBy@rAgFhGq@x@g@`AWr@_@lBOxB?zAqCT{@RgBn@e@Xw@h@kAjA]XYJS@]QsAmE[sAUaAOOAEK[w@uCyAaF}AqEgCeHa@oAs@}Bi@yAEAE@{@kDaBqGiBkHeAsDw@eCi@sAq@cByAqCcCqD_DoDyCkCuByAqCcBeB{@kC}@iDaAuGyAyH}AkImB}EiA}Dk@_DW{EW_Ng@iI[uNq@{EM}UOuDAuBKkCY{E_AcDeAwAi@cEmBeJuEqFmCcBu@gBo@oBc@q@McBUsCOmACsA@mCNwAP{AVuBh@_Bh@eAb@cCnA}AbAgCzBsChCiLzJyB`BwAx@_Bv@iDrA}DjAeCf@oC\uDTyCDmFOeEKaL[sDEoCFuAJeCXgCb@_GdAm@GqGn@y@DuAAoBOw@UcAQgAa@{A{@}AkAgD_DmA{@sAe@m@Ki@GkA@cAHqA`@g@Vw@l@eAjAuCbEgD|EyAbCaCnEuBvEgC~FkA`DwCvGwFlKqAnC}E~JyCnHuGjNwAfDoBpEsAlCiB`D_AfB}AdD{AbDiCbFs@z@[Za@Xa@VeBh@sANkACo@IcBi@_@Su@k@eDkDiDmDaIoKoFsGw@aAKEO?mByC{O}T}EyGqFaHyIaLkDcE_EuDaEgDsToNsMkIsGkE{TqNgQ}KyUqOyJsGcC_BmDsB_DkAaDs@sBYiAIoBGmLN{GH}CCuE[oEs@gCq@aDiAkCqAuD}Bu@k@oAgAkBiBkAuA{@iAo@_AoAuBs@uAe@_AaAeC{@eC{CwIiBuF{DgLwWgu@mEiM{]wbAoAoDa@uAuAqDmKmZoCaH{CsHcHmRkFeOgRoi@cDmJiHoS{DsKeDoJgI_VcCeHq@{BY_AeBcGqB_IcByH}AeIwIcf@i@uCsCoOgFcYwEcWmCeOuAcHm@iDy@sEeFuXoD_Sq@wDq@uCcBaG}JgYsAkE_CeIm\ggA}Tqu@uHkV{Vcz@uAiEcEeNyBsHc@wA@a@AE}@mDeDeMu@yC?O?GmAcE}A}FjA_@d@CbC@bI@d@Bd@H`Bt@j@Nf@FbAC`@I~BiAfFoCxAjEjAc@b@IfCArP?bODjD?ZCTGr@k@TIb@EvEBbEF?X</points>
+    </overview_polyline>
+    <bounds>
+      <southwest>
+        <lat>32.8958123</lat>
+        <lng>-96.9564164</lng>
+      </southwest>
+      <northeast>
+        <lat>33.1151852</lat>
+        <lng>-96.7587159</lng>
+      </northeast>
+    </bounds>
+  </route>
+  <geocoded_waypoint>
+    <geocoder_status>OK</geocoder_status>
+    <type>premise</type>
+    <place_id>ChIJpSs5vSIoTIYRFRTNxUENSRY</place_id>
+  </geocoded_waypoint>
+  <geocoded_waypoint>
+    <geocoder_status>OK</geocoder_status>
+    <type>street_address</type>
+    <place_id>ChIJT56kM1w9TIYRAouk5czL5l8</place_id>
+  </geocoded_waypoint>
+</DirectionsResponse>
