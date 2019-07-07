@@ -5,11 +5,12 @@
     <x:Property Name="argWeatherAPIendpoint" Type="InArgument(x:String)" />
     <x:Property Name="argVenueZIp" Type="InArgument(x:String)" />
     <x:Property Name="argWeatherAPIKey" Type="InArgument(x:String)" />
+    <x:Property Name="argVenueCountryCode" Type="InArgument(x:String)" />
   </x:Members>
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1142,1703</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1142,1803</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="25">
@@ -66,7 +67,7 @@
       <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Get Weather details from Open weather map api" sap:VirtualizedContainerService.HintSize="1102,1623" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Get Weather details from Open weather map api" sap:VirtualizedContainerService.HintSize="1102,1723" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="strXML" />
       <Variable x:TypeArguments="x:String" Name="strXMLFilePath" />
@@ -91,6 +92,7 @@
       <Variable x:TypeArguments="x:String" Default="[argWeatherAPIKey]" Name="strWeatherAPIKey" />
       <Variable x:TypeArguments="x:String" Name="strWeatherText" />
       <Variable x:TypeArguments="x:Int32" Name="iStatusCode" />
+      <Variable x:TypeArguments="x:String" Default="[argVenueCountryCode]" Name="strVenueCountryCode" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -98,6 +100,14 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:Comment sap:VirtualizedContainerService.HintSize="1080,169" sap2010:WorkflowViewState.IdRef="Comment_1" Text="// &#xA;• Input: Game date, Venue zip , Weather API end point &amp; Weather API Key&#xA;• Steps: Open Weather map will use the venue zip and compile the weather condition of the venue in the game date (from 6 A.M to 9 P.M)&#xA;• Output: weather condition on Game date on the venue&#xA;" />
+    <Assign sap:VirtualizedContainerService.HintSize="1080,60" sap2010:WorkflowViewState.IdRef="Assign_45">
+      <Assign.To>
+        <OutArgument x:TypeArguments="x:String">[strVenueZip]</OutArgument>
+      </Assign.To>
+      <Assign.Value>
+        <InArgument x:TypeArguments="x:String">[strVenueZip+","+strVenueCountryCode]</InArgument>
+      </Assign.Value>
+    </Assign>
     <ui:HttpClient Body="{x:Null}" ConsumerKey="{x:Null}" ConsumerSecret="{x:Null}" ContinueOnError="{x:Null}" OAuth1Token="{x:Null}" OAuth1TokenSecret="{x:Null}" OAuth2Token="{x:Null}" Password="{x:Null}" ResourcePath="{x:Null}" ResponseHeaders="{x:Null}" Username="{x:Null}" AcceptFormat="XML" BodyFormat="application/xml" ClientCertificate="[Nothing]" ClientCertificatePassword="[Nothing]" DisplayName="HTTP Request for Open Weather Map API" EndPoint="[strWeatherAPIEndpoint]" sap:VirtualizedContainerService.HintSize="1080,22" sap2010:WorkflowViewState.IdRef="HttpClient_2" Method="GET" Result="[strXML]" StatusCode="[iStatusCode]" TimeoutMS="6000">
       <ui:HttpClient.Attachments>
         <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />

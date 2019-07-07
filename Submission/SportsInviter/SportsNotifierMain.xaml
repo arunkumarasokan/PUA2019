@@ -84,6 +84,7 @@
       <Variable x:TypeArguments="x:String" Name="strScheduleFilePath" />
       <Variable x:TypeArguments="x:String" Name="strVenueFilePath" />
       <Variable x:TypeArguments="x:String" Name="strPlayerDetailsFilePath" />
+      <Variable x:TypeArguments="x:String" Name="strVenueCountryCode" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -219,6 +220,7 @@
                       <OutArgument x:TypeArguments="x:String" x:Key="argVenueAddress">[strVenueAddress]</OutArgument>
                       <OutArgument x:TypeArguments="x:String" x:Key="argGmapLink">[strVenueGmapLink]</OutArgument>
                       <OutArgument x:TypeArguments="x:Boolean" x:Key="argboolVenue">[boolVenueExists]</OutArgument>
+                      <OutArgument x:TypeArguments="x:String" x:Key="argVenueCountryCode">[strVenueCountryCode]</OutArgument>
                     </ui:InvokeWorkflowFile.Arguments>
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -245,6 +247,7 @@
                             <InArgument x:TypeArguments="x:String" x:Key="argWeatherAPIendpoint">[strWeatherAPIEndpoint]</InArgument>
                             <InArgument x:TypeArguments="x:String" x:Key="argVenueZIp">[strVenueZIP]</InArgument>
                             <InArgument x:TypeArguments="x:String" x:Key="argWeatherAPIKey">[strWeatherAPIKey]</InArgument>
+                            <InArgument x:TypeArguments="x:String" x:Key="argVenueCountryCode">[strVenueCountryCode]</InArgument>
                           </ui:InvokeWorkflowFile.Arguments>
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
