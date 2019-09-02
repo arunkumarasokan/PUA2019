@@ -10,7 +10,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>759,988</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>859,1286</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>TripMap_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="22">
@@ -65,7 +65,7 @@
       <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="TripMap" sap:VirtualizedContainerService.HintSize="719,908" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="TripMap" sap:VirtualizedContainerService.HintSize="839,1186" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="strXmlOutput" />
       <Variable x:TypeArguments="sxl:XDocument" Name="xmlDocObject" />
@@ -80,8 +80,9 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:Comment sap:VirtualizedContainerService.HintSize="697,150" sap2010:WorkflowViewState.IdRef="Comment_1" Text="// &#xA;• Input:  Origin address , destination address, Google API key, Google Location API endpoint&#xA;• Steps: Google Location API will calculate the distance and duration based on the origin and destination addresses&#xA;• Output: Distance and Duration&#xA;" />
-    <ui:HttpClient Body="{x:Null}" ConsumerKey="{x:Null}" ConsumerSecret="{x:Null}" ContinueOnError="{x:Null}" OAuth1Token="{x:Null}" OAuth1TokenSecret="{x:Null}" OAuth2Token="{x:Null}" Password="{x:Null}" ResourcePath="{x:Null}" ResponseHeaders="{x:Null}" Username="{x:Null}" AcceptFormat="XML" BodyFormat="application/xml" ClientCertificate="[Nothing]" ClientCertificatePassword="[Nothing]" DisplayName="HTTP Request for Google location API" EndPoint="[strGoogleMapEndpoint]" sap:VirtualizedContainerService.HintSize="697,22" sap2010:WorkflowViewState.IdRef="HttpClient_1" Method="GET" Result="[strXmlOutput]" StatusCode="[igStatusCode]" TimeoutMS="6000">
+    <ui:Comment sap:VirtualizedContainerService.HintSize="797,150" sap2010:WorkflowViewState.IdRef="Comment_1" Text="// &#xA;• Input:  Origin address , destination address, Google API key, Google Location API endpoint&#xA;• Steps: Google Direction API will calculate the distance and duration based on the origin and destination addresses&#xA;• Output: Distance and Duration&#xA;" />
+    <ui:Comment sap:VirtualizedContainerService.HintSize="797,74" sap2010:WorkflowViewState.IdRef="Comment_2" Text="// Invoke the Google Direction API  to get the trip details" />
+    <ui:HttpClient Body="{x:Null}" ConsumerKey="{x:Null}" ConsumerSecret="{x:Null}" ContinueOnError="{x:Null}" OAuth1Token="{x:Null}" OAuth1TokenSecret="{x:Null}" OAuth2Token="{x:Null}" Password="{x:Null}" ResourcePath="{x:Null}" ResponseHeaders="{x:Null}" Username="{x:Null}" AcceptFormat="XML" BodyFormat="application/xml" ClientCertificate="[Nothing]" ClientCertificatePassword="[Nothing]" DisplayName="HTTP Request for Google location API" EndPoint="[strGoogleMapEndpoint]" sap:VirtualizedContainerService.HintSize="797,22" sap2010:WorkflowViewState.IdRef="HttpClient_1" Method="GET" Result="[strXmlOutput]" StatusCode="[igStatusCode]" TimeoutMS="6000">
       <ui:HttpClient.Attachments>
         <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
       </ui:HttpClient.Attachments>
@@ -100,16 +101,18 @@
         <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
       </ui:HttpClient.UrlSegments>
     </ui:HttpClient>
-    <If Condition="[igStatusCode = 200 and strXmlOutput.Length&gt;0]" sap:VirtualizedContainerService.HintSize="697,532" sap2010:WorkflowViewState.IdRef="If_1">
+    <ui:Comment sap:VirtualizedContainerService.HintSize="797,74" sap2010:WorkflowViewState.IdRef="Comment_3" Text="// If the REST response code is 200 then the trip details are sent successfullly." />
+    <If Condition="[igStatusCode = 200 and strXmlOutput.Length&gt;0]" sap:VirtualizedContainerService.HintSize="797,614" sap2010:WorkflowViewState.IdRef="If_1">
       <If.Then>
-        <Sequence sap:VirtualizedContainerService.HintSize="336,384" sap2010:WorkflowViewState.IdRef="Sequence_2">
+        <Sequence sap:VirtualizedContainerService.HintSize="376,466" sap2010:WorkflowViewState.IdRef="Sequence_2">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:DeserializeXml DisplayName="Deserialize XML from Google Location API response" sap:VirtualizedContainerService.HintSize="314,60" sap2010:WorkflowViewState.IdRef="DeserializeXml_1" XMLDocument="[xmlDocObject]" XMLString="[strXmlOutput]" />
-          <Assign DisplayName="GetTripDuration" sap:VirtualizedContainerService.HintSize="314,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+          <ui:DeserializeXml DisplayName="Deserialize XML from Google Location API response" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="DeserializeXml_1" XMLDocument="[xmlDocObject]" XMLString="[strXmlOutput]" />
+          <ui:Comment sap:VirtualizedContainerService.HintSize="334,74" sap2010:WorkflowViewState.IdRef="Comment_4" Text="// Get the Distance and duration details of the trip" />
+          <Assign DisplayName="GetTripDuration" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_1">
             <Assign.To>
               <OutArgument x:TypeArguments="x:String">[argDuration]</OutArgument>
             </Assign.To>
@@ -117,7 +120,7 @@
               <InArgument x:TypeArguments="x:String">[xmlDocObject.Element("DirectionsResponse").Element("route").Element("leg").Element("duration").Element("text").Value]</InArgument>
             </Assign.Value>
           </Assign>
-          <Assign DisplayName="GetTripDistance" sap:VirtualizedContainerService.HintSize="314,60" sap2010:WorkflowViewState.IdRef="Assign_2">
+          <Assign DisplayName="GetTripDistance" sap:VirtualizedContainerService.HintSize="334,60" sap2010:WorkflowViewState.IdRef="Assign_2">
             <Assign.To>
               <OutArgument x:TypeArguments="x:String">[argDistance]</OutArgument>
             </Assign.To>
@@ -128,14 +131,15 @@
         </Sequence>
       </If.Then>
       <If.Else>
-        <Sequence sap:VirtualizedContainerService.HintSize="336,316" sap2010:WorkflowViewState.IdRef="Sequence_3">
+        <Sequence sap:VirtualizedContainerService.HintSize="376,417" sap2010:WorkflowViewState.IdRef="Sequence_3">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="314,61" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="Google location requests failed" />
-          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="314,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Google location requests failed&quot;]" />
+          <ui:Comment sap:VirtualizedContainerService.HintSize="334,93" sap2010:WorkflowViewState.IdRef="Comment_5" Text="// If the response code is not 200 then the call failed and the trip distance and duration cannot be found" />
+          <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="334,61" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="Google location requests failed" />
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,91" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="Info" Message="[&quot;Google location requests failed&quot;]" />
         </Sequence>
       </If.Else>
     </If>

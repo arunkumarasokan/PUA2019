@@ -10,7 +10,7 @@
   <mva:VisualBasic.Settings>
     <x:Null />
   </mva:VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1142,1803</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1270,2030</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ActivityBuilder_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="25">
@@ -67,7 +67,7 @@
       <AssemblyReference>System.Runtime.Serialization</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Get Weather details from Open weather map api" sap:VirtualizedContainerService.HintSize="1102,1723" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Get Weather details from Open weather map api" sap:VirtualizedContainerService.HintSize="1230,1950" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="strXML" />
       <Variable x:TypeArguments="x:String" Name="strXMLFilePath" />
@@ -99,8 +99,8 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:Comment sap:VirtualizedContainerService.HintSize="1080,169" sap2010:WorkflowViewState.IdRef="Comment_1" Text="// &#xA;• Input: Game date, Venue zip , Weather API end point &amp; Weather API Key&#xA;• Steps: Open Weather map will use the venue zip and compile the weather condition of the venue in the game date (from 6 A.M to 9 P.M)&#xA;• Output: weather condition on Game date on the venue&#xA;" />
-    <Assign sap:VirtualizedContainerService.HintSize="1080,60" sap2010:WorkflowViewState.IdRef="Assign_45">
+    <ui:Comment sap:VirtualizedContainerService.HintSize="1192,169" sap2010:WorkflowViewState.IdRef="Comment_1" Text="// &#xA;• Input: Game date, Venue zip , Weather API end point &amp; Weather API Key&#xA;• Steps: Open Weather map will use the venue zip and compile the weather condition of the venue in the game date (from 6 A.M to 9 P.M)&#xA;• Output: weather condition on Game date on the venue&#xA;" />
+    <Assign sap:VirtualizedContainerService.HintSize="1192,60" sap2010:WorkflowViewState.IdRef="Assign_45">
       <Assign.To>
         <OutArgument x:TypeArguments="x:String">[strVenueZip]</OutArgument>
       </Assign.To>
@@ -108,7 +108,7 @@
         <InArgument x:TypeArguments="x:String">[strVenueZip+","+strVenueCountryCode]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:HttpClient Body="{x:Null}" ConsumerKey="{x:Null}" ConsumerSecret="{x:Null}" ContinueOnError="{x:Null}" OAuth1Token="{x:Null}" OAuth1TokenSecret="{x:Null}" OAuth2Token="{x:Null}" Password="{x:Null}" ResourcePath="{x:Null}" ResponseHeaders="{x:Null}" Username="{x:Null}" AcceptFormat="XML" BodyFormat="application/xml" ClientCertificate="[Nothing]" ClientCertificatePassword="[Nothing]" DisplayName="HTTP Request for Open Weather Map API" EndPoint="[strWeatherAPIEndpoint]" sap:VirtualizedContainerService.HintSize="1080,22" sap2010:WorkflowViewState.IdRef="HttpClient_2" Method="GET" Result="[strXML]" StatusCode="[iStatusCode]" TimeoutMS="6000">
+    <ui:HttpClient Body="{x:Null}" ConsumerKey="{x:Null}" ConsumerSecret="{x:Null}" ContinueOnError="{x:Null}" OAuth1Token="{x:Null}" OAuth1TokenSecret="{x:Null}" OAuth2Token="{x:Null}" Password="{x:Null}" ResourcePath="{x:Null}" ResponseHeaders="{x:Null}" Username="{x:Null}" AcceptFormat="XML" BodyFormat="application/xml" ClientCertificate="[Nothing]" ClientCertificatePassword="[Nothing]" DisplayName="HTTP Request for Open Weather Map API" EndPoint="[strWeatherAPIEndpoint]" sap:VirtualizedContainerService.HintSize="1192,22" sap2010:WorkflowViewState.IdRef="HttpClient_2" Method="GET" Result="[strXML]" StatusCode="[iStatusCode]" TimeoutMS="6000">
       <ui:HttpClient.Attachments>
         <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
       </ui:HttpClient.Attachments>
@@ -127,17 +127,18 @@
         <scg:Dictionary x:TypeArguments="x:String, InArgument(x:String)" />
       </ui:HttpClient.UrlSegments>
     </ui:HttpClient>
-    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="1080,61" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[&quot;Weather status code : &quot; +iStatusCode.ToString]" />
-    <If Condition="[iStatusCode =200 and strXML.Length&gt;0]" DisplayName="Check If status is 200" sap:VirtualizedContainerService.HintSize="1080,1127" sap2010:WorkflowViewState.IdRef="If_7">
+    <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="1192,61" sap2010:WorkflowViewState.IdRef="WriteLine_1" Text="[&quot;Weather status code : &quot; +iStatusCode.ToString]" />
+    <ui:Comment sap:VirtualizedContainerService.HintSize="1192,74" sap2010:WorkflowViewState.IdRef="Comment_2" Text="// Check if the API status code is 200 i.e. Successfull Rest API call." />
+    <If Condition="[iStatusCode =200 and strXML.Length&gt;0]" DisplayName="Check If status is 200" sap:VirtualizedContainerService.HintSize="1192,1272" sap2010:WorkflowViewState.IdRef="If_7">
       <If.Then>
-        <Sequence DisplayName="Status 200 Sequence" sap:VirtualizedContainerService.HintSize="719,979" sap2010:WorkflowViewState.IdRef="Sequence_13">
+        <Sequence DisplayName="Status 200 Sequence" sap:VirtualizedContainerService.HintSize="815,1124" sap2010:WorkflowViewState.IdRef="Sequence_13">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:DeserializeXml DisplayName="Deserialize XML from Open weather API request" sap:VirtualizedContainerService.HintSize="697,60" sap2010:WorkflowViewState.IdRef="DeserializeXml_1" XMLDocument="[xDoc1]" XMLString="[strXML]" />
-          <ui:ForEach x:TypeArguments="sxl:XElement" CurrentIndex="{x:Null}" DisplayName="For Each item in weather XML" sap:VirtualizedContainerService.HintSize="697,51" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[xDoc1.Element(&quot;weatherdata&quot;).Element(&quot;forecast&quot;).Elements(&quot;time&quot;)]">
+          <ui:DeserializeXml DisplayName="Deserialize XML from Open weather API request" sap:VirtualizedContainerService.HintSize="777,60" sap2010:WorkflowViewState.IdRef="DeserializeXml_1" XMLDocument="[xDoc1]" XMLString="[strXML]" />
+          <ui:ForEach x:TypeArguments="sxl:XElement" CurrentIndex="{x:Null}" DisplayName="For Each item in weather XML" sap:VirtualizedContainerService.HintSize="777,51" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[xDoc1.Element(&quot;weatherdata&quot;).Element(&quot;forecast&quot;).Elements(&quot;time&quot;)]">
             <ui:ForEach.Body>
               <ActivityAction x:TypeArguments="sxl:XElement">
                 <ActivityAction.Argument>
@@ -559,7 +560,7 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
           </ui:ForEach>
-          <Assign sap:VirtualizedContainerService.HintSize="697,60" sap2010:WorkflowViewState.IdRef="Assign_41">
+          <Assign sap:VirtualizedContainerService.HintSize="777,60" sap2010:WorkflowViewState.IdRef="Assign_41">
             <Assign.To>
               <OutArgument x:TypeArguments="x:String">[strWeatherText]</OutArgument>
             </Assign.To>
@@ -567,7 +568,8 @@
               <InArgument x:TypeArguments="x:String">[strDaySession1+environment.NewLine+environment.NewLine+strDaySession2+environment.NewLine+environment.NewLine+strDaySession3+environment.NewLine+environment.NewLine+strDaySession4+environment.NewLine+environment.NewLine+strDaySession5]</InArgument>
             </Assign.Value>
           </Assign>
-          <If Condition="[string.IsNullOrEmpty(strDaySession1)]" DisplayName="If No Weather Details are available" sap:VirtualizedContainerService.HintSize="697,564" sap2010:WorkflowViewState.IdRef="If_6">
+          <ui:Comment sap:VirtualizedContainerService.HintSize="777,55" sap2010:WorkflowViewState.IdRef="Comment_3" Text="// Check if the weather details are received" />
+          <If Condition="[string.IsNullOrEmpty(strDaySession1)]" DisplayName="If No Weather Details are available" sap:VirtualizedContainerService.HintSize="777,646" sap2010:WorkflowViewState.IdRef="If_6">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -575,14 +577,15 @@
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
             <If.Then>
-              <Sequence DisplayName="Weather details not available Sequence" sap:VirtualizedContainerService.HintSize="336,416" sap2010:WorkflowViewState.IdRef="Sequence_12">
+              <Sequence DisplayName="Weather details not available Sequence" sap:VirtualizedContainerService.HintSize="368,498" sap2010:WorkflowViewState.IdRef="Sequence_12">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="314,61" sap2010:WorkflowViewState.IdRef="WriteLine_2" Text="Sorry, Weather Information available only before 5 days of the game." />
-                <Assign sap:VirtualizedContainerService.HintSize="314,60" sap2010:WorkflowViewState.IdRef="Assign_43">
+                <ui:Comment sap:VirtualizedContainerService.HintSize="330,74" sap2010:WorkflowViewState.IdRef="Comment_4" Text="// Weather details are not available of the venue on the game day" />
+                <WriteLine DisplayName="Write Line" sap:VirtualizedContainerService.HintSize="330,61" sap2010:WorkflowViewState.IdRef="WriteLine_2" Text="Sorry, Weather Information available only before 5 days of the game." />
+                <Assign sap:VirtualizedContainerService.HintSize="330,60" sap2010:WorkflowViewState.IdRef="Assign_43">
                   <Assign.To>
                     <OutArgument x:TypeArguments="x:String">[argWeatherCondition]</OutArgument>
                   </Assign.To>
@@ -590,17 +593,18 @@
                     <InArgument x:TypeArguments="x:String">Sorry, Weather Information available before 5 days of the game.</InArgument>
                   </Assign.Value>
                 </Assign>
-                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="314,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Weather Conditions not received for this game!&quot;]" />
+                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="330,91" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="Info" Message="[&quot;Weather Conditions not received for this game!&quot;]" />
               </Sequence>
             </If.Then>
             <If.Else>
-              <Sequence DisplayName="Weather details available Sequence" sap:VirtualizedContainerService.HintSize="336,315" sap2010:WorkflowViewState.IdRef="Sequence_15">
+              <Sequence DisplayName="Weather details available Sequence" sap:VirtualizedContainerService.HintSize="368,397" sap2010:WorkflowViewState.IdRef="Sequence_15">
                 <sap:WorkflowViewStateService.ViewState>
                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                   </scg:Dictionary>
                 </sap:WorkflowViewStateService.ViewState>
-                <Assign sap:VirtualizedContainerService.HintSize="314,60" sap2010:WorkflowViewState.IdRef="Assign_42">
+                <ui:Comment sap:VirtualizedContainerService.HintSize="330,74" sap2010:WorkflowViewState.IdRef="Comment_5" Text="//  Weather details of the venue are received  on the game day" />
+                <Assign sap:VirtualizedContainerService.HintSize="330,60" sap2010:WorkflowViewState.IdRef="Assign_42">
                   <Assign.To>
                     <OutArgument x:TypeArguments="x:String">[argWeatherCondition]</OutArgument>
                   </Assign.To>
@@ -608,7 +612,7 @@
                     <InArgument x:TypeArguments="x:String">[strWeatherText]</InArgument>
                   </Assign.Value>
                 </Assign>
-                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="314,91" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Weather Condition received!&quot;]" />
+                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="330,91" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="Info" Message="[&quot;Weather Condition received!&quot;]" />
               </Sequence>
             </If.Else>
           </If>
